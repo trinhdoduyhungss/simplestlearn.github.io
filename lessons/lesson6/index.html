@@ -640,10 +640,10 @@
 <pre class="mermaid"><code>graph TD
     A{Likes Video Games?} --&gt;|"Yes (1)"| B{Likes Superheroes?};
     A --&gt;|"No (0)"| C{Likes Superheroes?};
-    B --&gt;|"Yes (1)"| D[Predict: Likes Pizza! (1)];
-    B --&gt;|"No (0)"| E[Predict: Likes Pizza! (1)];
-    C --&gt;|"Yes (1)"| F[Predict: Likes Pizza! (1)];
-    C --&gt;|"No (0)"| G[Predict: Does NOT Like Pizza! (0)];</code></pre>
+    B --&gt;|"Yes (1)"| D["Predict: Likes Pizza! (1)"];
+    B --&gt;|"No (0)"| E["Predict: Likes Pizza! (1)"];
+    C --&gt;|"Yes (1)"| F["Predict: Likes Pizza! (1)"];
+    C --&gt;|"No (0)"| G["Predict: Does NOT Like Pizza! (0)"];</code></pre>
 <p>This flowchart is just a set of rules. We can read it like a story: "First, ask if the student likes video games. If the answer is yes, then ask if they like superheroes..." and so on.</p>
 <p>We can translate this <em>exact</em> story into Python using <code>if/else</code> statements.</p>
 <hr />

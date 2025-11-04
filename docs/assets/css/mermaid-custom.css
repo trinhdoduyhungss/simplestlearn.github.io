@@ -1,0 +1,52 @@
+/* Mermaid Diagram Styling */
+
+/* Center all mermaid diagrams */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+/* Container for mermaid - makes it responsive */
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Limit diagram size on large screens */
+@media (min-width: 1200px) {
+  .mermaid {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Adjust for tablets and mobile */
+@media (max-width: 768px) {
+  .mermaid {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* Fix for specific diagram types */
+.mermaid div.mermaidTooltip {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure diagrams don't overflow on smaller screens */
+.mermaid svg {
+  font-size: 14px;
+}
+
+/* Add spacing around diagrams */
+.mermaid {
+  padding: 1rem 0;
+}

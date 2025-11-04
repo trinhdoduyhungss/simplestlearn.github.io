@@ -717,9 +717,15 @@
 <h4 id="tool-2-data-structures-the-trees-blueprint"><strong>Tool 2: Data Structures (The Tree's Blueprint)</strong><a class="headerlink" href="#tool-2-data-structures-the-trees-blueprint" title="Permanent link">&para;</a></h4>
 <p>How do we store a tree in code? We can use a <strong>dictionary</strong> or a <strong>class</strong>! Each "node" (or question) in our tree can hold the question and its "left" and "right" branches, which are more nodes.</p>
 <h4 id="tool-3-gini-impurity-the-purity-score"><strong>Tool 3: Gini Impurity (The "Purity" Score)</strong><a class="headerlink" href="#tool-3-gini-impurity-the-purity-score" title="Permanent link">&para;</a></h4>
-<p>This is the secret sauce. How does the algorithm know which question is best? It uses a "purity score" to check how well a question splits the data.
-*   A <strong>perfectly pure</strong> group has a score of <strong>0</strong> (e.g., a group of students who all like pizza).
-*   A <strong>totally mixed</strong> group has a score of <strong>0.5</strong> (e.g., a group with 50% pizza lovers and 50% pizza haters).</p>
+<p>This is the secret sauce. How does the algorithm know which question is best? It uses a "purity score" to check how well a question splits the data.</p>
+<ul>
+<li>
+<p>A <strong>perfectly pure</strong> group has a score of <strong>0</strong> (e.g., a group of students who all like pizza).</p>
+</li>
+<li>
+<p>A <strong>totally mixed</strong> group has a score of <strong>0.5</strong> (e.g., a group with 50% pizza lovers and 50% pizza haters).</p>
+</li>
+</ul>
 <p>The algorithm calculates the purity score for every possible question and picks the one that creates the purest groups.</p>
 <h4 id="the-code-step-by-step-a-visual-walkthrough"><strong>The Code, Step-by-Step: A Visual Walkthrough</strong><a class="headerlink" href="#the-code-step-by-step-a-visual-walkthrough" title="Permanent link">&para;</a></h4>
 <p>Let's trace the computer's "thinking" as it starts to build the tree.</p>
@@ -731,9 +737,15 @@
 </code></pre></div>
 The computer's first goal is to find the single best question to ask to split this group.</p>
 <p><strong>Step 1: Calculate the Starting Purity</strong>
-First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1 hater (0). This is a pretty mixed group.
-*   <strong>Computation:</strong> The Gini Impurity is <code>1 - ((3/4)^2 + (1/4)^2) = 1 - (0.5625 + 0.0625) = 0.375</code>.
-*   <strong>Output:</strong> The starting "impurity" is 0.375. The goal is to ask a question that lowers this number as much as possible.</p>
+First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1 hater (0). This is a pretty mixed group.</p>
+<ul>
+<li>
+<p><strong>Computation:</strong> The Gini Impurity is <code>1 - ((3/4)^2 + (1/4)^2) = 1 - (0.5625 + 0.0625) = 0.375</code>.</p>
+</li>
+<li>
+<p><strong>Output:</strong> The starting "impurity" is 0.375. The goal is to ask a question that lowers this number as much as possible.</p>
+</li>
+</ul>
 <pre class="mermaid"><code>graph TD
     subgraph Starting Group
         A["[1,1,1], [0,1,1], [1,0,1], [0,0,0]"]
@@ -748,8 +760,10 @@ The computer pretends to split the group based on this question.</p>
         B --&gt;|Yes| C["Left Group: [1,1,1], [1,0,1]&lt;br&gt;2 Likes Pizza, 0 Hates&lt;br&gt;&lt;b&gt;Gini = 0.0 (Perfectly Pure!)&lt;/b&gt;"];
         B --&gt;|No| D["Right Group: [0,1,1], [0,0,0]&lt;br&gt;1 Likes Pizza, 1 Hates&lt;br&gt;&lt;b&gt;Gini = 0.5 (Totally Mixed!)&lt;/b&gt;"];
     end</code></pre>
-*   <strong>Computation:</strong> The computer calculates a weighted average of the new impurity: <code>(2/4)*0.0 + (2/4)*0.5 = 0.25</code>. The "Information Gain" (how much the impurity went down) is <code>0.375 - 0.25 = 0.125</code>.
-*   <strong>Output:</strong> The score for this question is <strong>0.125</strong>.</p>
+*   <strong>Computation:</strong> The computer calculates a weighted average of the new impurity: <code>(2/4)*0.0 + (2/4)*0.5 = 0.25</code>. The "Information Gain" (how much the impurity went down) is <code>0.375 - 0.25 = 0.125</code>.</p>
+<ul>
+<li><strong>Output:</strong> The score for this question is <strong>0.125</strong>.</li>
+</ul>
 <p><strong>Step 3: Test the Second Question ("Likes Superheroes?")</strong>
 Now the computer "forgets" the last split and tries again with the next question.</p>
 <p><pre class="mermaid"><code>graph TD
@@ -758,8 +772,10 @@ Now the computer "forgets" the last split and tries again with the next question
         B --&gt;|Yes| C["Left Group: [1,1,1], [0,1,1]&lt;br&gt;2 Likes Pizza, 0 Hates&lt;br&gt;&lt;b&gt;Gini = 0.0 (Perfectly Pure!)&lt;/b&gt;"];
         B --&gt;|No| D["Right Group: [1,0,1], [0,0,0]&lt;br&gt;1 Likes Pizza, 1 Hates&lt;br&gt;&lt;b&gt;Gini = 0.5 (Totally Mixed!)&lt;/b&gt;"];
     end</code></pre>
-*   <strong>Computation:</strong> The weighted average is the same: <code>(2/4)*0.0 + (2/4)*0.5 = 0.25</code>. The "Information Gain" is also <code>0.375 - 0.25 = 0.125</code>.
-*   <strong>Output:</strong> The score for this question is <strong>0.125</strong>.</p>
+*   <strong>Computation:</strong> The weighted average is the same: <code>(2/4)*0.0 + (2/4)*0.5 = 0.25</code>. The "Information Gain" is also <code>0.375 - 0.25 = 0.125</code>.</p>
+<ul>
+<li><strong>Output:</strong> The score for this question is <strong>0.125</strong>.</li>
+</ul>
 <p><strong>Step 4: The Decision</strong>
 The computer compares the scores. In this case, they're tied! In a tie, the computer just picks the first one it tried.
 *   <strong>The Winner:</strong> The best first question is "Likes Video Games?".</p>

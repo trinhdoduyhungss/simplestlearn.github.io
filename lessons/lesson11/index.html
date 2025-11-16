@@ -762,7 +762,7 @@
 <li><strong>Output Layer:</strong> This layer gives the final answer. After listening to all the hidden experts, it might say, "I'm 95% sure this is a dog."</li>
 </ol>
 <p>Here’s what that looks like:</p>
-<div align="center"><img src="../assets/diagrams/nn-diagram.svg"/></div>
+<div align="center"><img src="assets/diagrams/nn-diagram.svg"/></div>
 
 <blockquote>
 <p><strong>🧠 Psychologist's Corner: It's All in the Connections!</strong></p>
@@ -784,7 +784,7 @@
 $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$</p>
 <p><strong>Visualization (Sigmoid):</strong></p>
 <div align="center" aria-hidden="false" role="img" aria-label="Sigmoid function plot">
-<img src="../assets/diagrams/sigmoid.svg"/>
+<img src="assets/diagrams/sigmoid.svg"/>
 </div>
 
 <p>As the input <code>z</code> gets very large, the output gets close to 1. As it gets very small (very negative), the output gets close to 0.</p>
@@ -795,7 +795,7 @@ $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$</p>
 $$ \text{ReLU}(z) = \max(0, z) $$</p>
 <p><strong>Visualization (ReLU):</strong></p>
 <div align="center" aria-hidden="false" role="img" aria-label="ReLU function plot">
-<img src="../assets/diagrams/relu.svg"/>
+<img src="assets/diagrams/relu.svg"/>
 </div>
 
 <p>This "on/off" behavior helps the network learn faster and is less computationally expensive than Sigmoid.</p>
@@ -809,7 +809,7 @@ $$ \text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{k} e^{z_j}} $$</p>
 - Example logits: z = [-1, 0.5, 2.0]
 - Softmax outputs ≈ [0.04, 0.18, 0.78]</p>
 <div align="center" aria-hidden="false" role="img" aria-label="Softmax example bar chart">
-<img src="../assets/diagrams/softmax.svg"/>
+<img src="assets/diagrams/softmax.svg"/>
 </div>
 
 <p>This ensures you can see how softmax pushes logits into a probability distribution where the largest logit dominates the final output.</p>
@@ -934,8 +934,6 @@ $$ \text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{k} e^{z_j}} $$</p>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-      
-        <script src="../../assets/js/mermaid-init.js"></script>
       
     
   </body>

@@ -1,0 +1,66 @@
+<!-- Replace the mermaid diagram with an inline SVG for better visualization -->
+<!-- Old mermaid block removed -->
+
+<!-- Inline SVG neural network diagram -->
+<svg width="100%" height="260" viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" aria-label="Simple neural network diagram" role="img">
+  <!-- Layer labels -->
+  <text x="60" y="20" font-size="14" font-family="sans-serif">Input Layer</text>
+  <text x="320" y="20" font-size="14" font-family="sans-serif">Hidden Layer 1</text>
+  <text x="520" y="20" font-size="14" font-family="sans-serif">Hidden Layer 2</text>
+  <text x="700" y="20" font-size="14" font-family="sans-serif">Output Layer</text>
+
+  <!-- Input circles -->
+  <circle cx="60" cy="80" r="18" fill="#e0f2fe" stroke="#0369a1"/>
+  <text x="60" y="86" font-size="12" text-anchor="middle" font-family="sans-serif">I1</text>
+  <circle cx="60" cy="140" r="18" fill="#e0f2fe" stroke="#0369a1"/>
+  <text x="60" y="146" font-size="12" text-anchor="middle" font-family="sans-serif">I2</text>
+  <circle cx="60" cy="200" r="18" fill="#e0f2fe" stroke="#0369a1"/>
+  <text x="60" y="206" font-size="12" text-anchor="middle" font-family="sans-serif">I3</text>
+
+  <!-- Hidden layer 1 circles -->
+  <circle cx="320" cy="80" r="18" fill="#fef3c7" stroke="#b45309"/>
+  <text x="320" y="86" font-size="12" text-anchor="middle" font-family="sans-serif">H1_1</text>
+  <circle cx="320" cy="140" r="18" fill="#fef3c7" stroke="#b45309"/>
+  <text x="320" y="146" font-size="12" text-anchor="middle" font-family="sans-serif">H1_2</text>
+  <circle cx="320" cy="200" r="18" fill="#fef3c7" stroke="#b45309"/>
+  <text x="320" y="206" font-size="12" text-anchor="middle" font-family="sans-serif">H1_3</text>
+
+  <!-- Hidden layer 2 circles -->
+  <circle cx="520" cy="110" r="18" fill="#bbf7d0" stroke="#065f46"/>
+  <text x="520" y="116" font-size="12" text-anchor="middle" font-family="sans-serif">H2_1</text>
+  <circle cx="520" cy="170" r="18" fill="#bbf7d0" stroke="#065f46"/>
+  <text x="520" y="176" font-size="12" text-anchor="middle" font-family="sans-serif">H2_2</text>
+
+  <!-- Output circles -->
+  <circle cx="700" cy="100" r="18" fill="#fce7f3" stroke="#9f1239"/>
+  <text x="700" y="106" font-size="12" text-anchor="middle" font-family="sans-serif">Dog?</text>
+  <circle cx="700" cy="170" r="18" fill="#fce7f3" stroke="#9f1239"/>
+  <text x="700" y="176" font-size="12" text-anchor="middle" font-family="sans-serif">Cat?</text>
+
+  <!-- Connections from Input to Hidden1 -->
+  <line x1="78" y1="80" x2="302" y2="80" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="80" x2="302" y2="140" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="80" x2="302" y2="200" stroke="#94a3b8" stroke-width="1"/>
+
+  <line x1="78" y1="140" x2="302" y2="80" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="140" x2="302" y2="140" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="140" x2="302" y2="200" stroke="#94a3b8" stroke-width="1"/>
+
+  <line x1="78" y1="200" x2="302" y2="80" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="200" x2="302" y2="140" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="78" y1="200" x2="302" y2="200" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Connections from Hidden1 to Hidden2 -->
+  <line x1="338" y1="80" x2="502" y2="110" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="338" y1="80" x2="502" y2="170" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="338" y1="140" x2="502" y2="110" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="338" y1="140" x2="502" y2="170" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="338" y1="200" x2="502" y2="110" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="338" y1="200" x2="502" y2="170" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Connections from Hidden2 to Output -->
+  <line x1="538" y1="110" x2="682" y2="100" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="538" y1="110" x2="682" y2="170" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="538" y1="170" x2="682" y2="100" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="538" y1="170" x2="682" y2="170" stroke="#94a3b8" stroke-width="1"/>
+</svg>

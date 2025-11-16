@@ -18,9 +18,14 @@ Imagine you have a giant pile of laundry. Your job is to sort it into the right 
 **The Big Idea:** The model predicts a **category** or a **class**.
 
 **Real-World Examples:**
+
 *   **Spam or Not Spam?** Your email uses classification to read an incoming email and decide: should it go in the "spam" basket or the "inbox" basket?
 *   **Cat vs. Dog:** Our example from last lesson was a classic classification problem. The model looks at a picture and sorts it into the "cat" category or the "dog" category.
 *   **Pizza Lover?:** Our very first model was also a classification model! It predicted whether a student belonged to the "likes pizza" group or the "doesn't like pizza" group.
+
+> **🤯 Fun Fact: Classifying the Stars!**
+>
+> Astronomers use classification models to automatically sort images of distant galaxies. Based on features like the galaxy's shape and color, the model can classify it as a "spiral," "elliptical," or "irregular" galaxy, helping scientists understand the universe faster than ever before!
 
 ---
 
@@ -36,16 +41,14 @@ Imagine a big jar full of jellybeans. If you try to guess *exactly* how many are
 **Real-World Examples:**
 
 *   **Weather Forecast:** When your weather app says it will be 75°F tomorrow, that's a regression model at work. It's predicting a specific number on the temperature scale.
-
 *   **Pizza Delivery Time:** When you order a pizza and the app says it will arrive in 25 minutes, a regression model has predicted that number based on things like traffic, how busy the store is, and how far away you are.
-
 *   **House Prices:** Real estate websites use regression to predict how much a house is worth. They look at features like the number of bedrooms, the square footage, and the neighborhood to predict a specific price.
 
 ---
 
 ## A Quick Visual Guide
 
-Here's a little diagram to help you remember the difference:
+Here’s a little diagram to help you remember the difference:
 
 ```mermaid
 graph TD
@@ -74,7 +77,7 @@ So, how do you know if you have a classification or a regression problem? It's e
 **The One Big Question: Is the answer I want to predict a word/category, or is it a number?**
 
 ```mermaid
-graph LR
+graph TD
     A{What kind of answer <br> do I want to predict?} --> B{Is it a word or category?};
     A --> C{Is it a number?};
     B -- Yes --> D[It's Classification!];
@@ -85,6 +88,10 @@ If the answer you're looking for is a label from a small group of choices (like 
 
 If the answer you're looking for is a number that can change (like a price, a temperature, or a score), you've got a **Regression** problem. It's that simple!
 
+> **🧠 Two Kinds of Questions**
+>
+> Our brains do this all the time! When you look at a traffic light, you're solving a **classification** problem: is it "Red," "Yellow," or "Green"? When you try to guess how many minutes are left in class, you're solving a **regression** problem. We're constantly switching between these two types of thinking without even realizing it!
+
 ---
 
 ## Part 4: Let's Discuss!
@@ -92,11 +99,8 @@ If the answer you're looking for is a number that can change (like a price, a te
 Time to put on your thinking cap! For each of these problems, is it a **Classification** problem or a **Regression** problem? Use your new detective kit to decide!
 
 1.  Predicting whether a student will pass or fail a test.
-
 2.  Predicting a student's exact score on that test (from 0 to 100).
-
 3.  Predicting if a customer will buy a product (yes or no).
-
 4.  Predicting how much money a customer will spend.
 
 ---

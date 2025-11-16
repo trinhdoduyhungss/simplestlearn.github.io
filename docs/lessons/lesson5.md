@@ -20,6 +20,10 @@ Imagine you're trying to guess an animal. You might ask:
 
 A Decision Tree does the exact same thing with data! It learns the best questions to ask to separate the data into different groups.
 
+> **🧠 How You Decide What to Eat**
+>
+> Your brain uses a decision tree every day! When you're hungry, you might think: "Am I in the mood for something sweet or savory?" If savory, "Do I want something quick or a full meal?" If quick, "Maybe a sandwich." You're following the branches of your own mental flowchart to make a decision!
+
 ---
 
 ### Part 2: Building the Tree (From Data to Flowchart)
@@ -71,6 +75,10 @@ It's that simple! We just followed the path down the tree to get our answer.
 Okay, it's time. How do we actually tell a computer to do this? We use a programming language, and the most popular one for AI is **Python**.
 
 But we don't have to build everything from scratch! We can use a special "toolbox" for machine learning called **scikit-learn**. It's a free library that has all the common ML models, including Decision Trees, ready to go.
+
+> **🤯 Fun Fact: Built by Volunteers!**
+>
+> Scikit-learn, one of the most important and powerful AI toolboxes in the world, is built and maintained almost entirely by volunteers! It's a global community of people who are passionate about making machine learning accessible to everyone.
 
 Here’s what the code would look like. Don't worry about understanding every single word. Just focus on the three main steps and the comments that explain them.
 

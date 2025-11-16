@@ -26,6 +26,21 @@ Time to code! We'll use the powerful `scikit-learn` library to build our first r
 ### **Lesson 6: Under the Hood** 🛠️
 For the truly curious, we'll pull back the curtain and build a learning Decision Tree algorithm from scratch to see how the magic really works.
 
+### **Lesson 7: Is Our AI Smart?** 📝
+Learn how to grade your model like a real scientist! We'll discover the importance of a "test set" and learn how to measure our model's performance.
+
+### **Lesson 8: You Are Who Your Friends Are** 🧑‍🤝‍🧑
+Explore a new, intuitive algorithm called K-Nearest Neighbors (KNN), which makes predictions based on the "friends" a data point keeps.
+
+### **Lesson 9: The Friendship Bracelet** 🧵
+A true challenge! We'll build the K-Nearest Neighbors algorithm from scratch using nothing but pure Python to see how it really works.
+
+### **Lesson 10: The Art of Measurement** 📏
+Dive deeper into the heart of the KNN algorithm and explore the different ways to measure "distance," like Euclidean, Manhattan, and the powerful Cosine Similarity.
+
+### **Lesson 11: Introduction to Neural Networks** 🤖🧠
+A gentle introduction to perceptrons and multi-layer neural networks. Learn about activation functions, simple training concepts, and build a small neural network with scikit-learn and a tiny Keras example.
+
 ## 🚀 Getting Started
 
 Start with **Lesson 1** to understand the fundamentals, then progress through the lessons in order. Each one builds on the previous, taking you from a beginner to a true AI builder!

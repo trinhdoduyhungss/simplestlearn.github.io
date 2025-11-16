@@ -16,10 +16,10 @@ Let's look at our Decision Tree flowchart from the last lesson one more time.
 graph TD
     A{Likes Video Games?} -->|"Yes (1)"| B{Likes Superheroes?};
     A -->|"No (0)"| C{Likes Superheroes?};
-    B -->|"Yes (1)"| D[Predict: Likes Pizza! (1)];
-    B -->|"No (0)"| E[Predict: Likes Pizza! (1)];
-    C -->|"Yes (1)"| F[Predict: Likes Pizza! (1)];
-    C -->|"No (0)"| G[Predict: Does NOT Like Pizza! (0)];
+    B -->|"Yes (1)"| D["Predict: Likes Pizza! (1)"];
+    B -->|"No (0)"| E["Predict: Likes Pizza! (1)"];
+    C -->|"Yes (1)"| F["Predict: Likes Pizza! (1)"];
+    C -->|"No (0)"| G["Predict: Does NOT Like Pizza! (0)"];
 ```
 
 This flowchart is just a set of rules. We can read it like a story: "First, ask if the student likes video games. If the answer is yes, then ask if they like superheroes..." and so on.
@@ -121,7 +121,7 @@ So, by building a model by hand, you've learned the secret of what a Decision Tr
 Imagine you're standing between two mirrors. You see a reflection of a reflection of a reflection... forever! That's **recursion**. In programming, it's a function that calls *itself* to solve a smaller piece of the same problem. We'll use this to "grow" our tree, with each branch being a smaller version of the tree.
 
 #### **Tool 2: Data Structures (The Tree's Blueprint)**
-How do we store a tree in code? We can use a **dictionary** or a **class**! Each "node" (or question) in our tree can hold the question and its "left" and "right" branches, which are more nodes.
+How do we store a tree in code? We can use a **class**! A `class` is like a blueprint for creating objects. We'll create a `Node` class that acts as a blueprint for each question (or "node") in our tree. Each `Node` object will know what its question is, and what its "left" and "right" branches are.
 
 #### **Tool 3: Gini Impurity (The "Purity" Score)**
 This is the secret sauce. How does the algorithm know which question is best? It uses a "purity score" to check how well a question splits the data.
@@ -129,6 +129,10 @@ This is the secret sauce. How does the algorithm know which question is best? It
 *   A **totally mixed** group has a score of **0.5** (e.g., a group with 50% pizza lovers and 50% pizza haters).
 
 The algorithm calculates the purity score for every possible question and picks the one that creates the purest groups.
+
+> **🤯 Fun Fact: It's All About Information!**
+>
+> The idea of "Information Gain" (which we get by lowering the Gini Impurity) was developed by a scientist named Claude Shannon, who is considered the "father of the information age." He created a whole field of science called "Information Theory" to measure information, and it's the foundation for how computers, phones, and the internet work today!
 
 #### **The Code, Step-by-Step: A Visual Walkthrough**
 Let's trace the computer's "thinking" as it starts to build the tree.
@@ -144,7 +148,34 @@ The computer's first goal is to find the single best question to ask to split th
 
 **Step 1: Calculate the Starting Purity**
 First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1 hater (0). This is a pretty mixed group.
-*   **Computation:** The Gini Impurity is `1 - ((3/4)^2 + (1/4)^2) = 1 - (0.5625 + 0.0625) = 0.375`.
+*   **Computation:** The Gini Impurity for a set S with C classes is defined as:
+
+    $$
+    \mathrm{Gini}(S) = 1 - \sum_{k=1}^{C} p_k^2
+    $$
+
+    where \(p_k\) is the proportion of samples in S that belong to class \(k\).
+
+    In our dataset (two classes: pizza=1, not-pizza=0):
+    \[
+    p_1 = \frac{3}{4}, \quad p_0 = \frac{1}{4}.
+    \]
+
+    Substitute and compute:
+    \[
+    \begin{aligned}
+    \mathrm{Gini}(S)
+      &= 1 - \left(\left(\frac{3}{4}\right)^2 + \left(\frac{1}{4}\right)^2 \right) \\
+      &= 1 - \left(\frac{9}{16} + \frac{1}{16}\right) \\
+      &= 1 - \frac{10}{16} = \frac{6}{16} = 0.375.
+    \end{aligned}
+    \]
+
+    Interpretation:
+    * 0 means perfectly "pure" (all samples same class).
+    * For binary classification, the maximum Gini is \(1 - \tfrac{1}{2} = 0.5\) (when classes are equally mixed).
+    * Another useful interpretation: \(\sum_k p_k^2\) is the probability that two randomly selected samples from S have the same label; therefore \(\mathrm{Gini}(S)\) equals the probability two randomly chosen samples have different labels, i.e., how "impure" the set is.
+
 *   **Output:** The starting "impurity" is 0.375. The goal is to ask a question that lowers this number as much as possible.
 
 ```mermaid
@@ -167,8 +198,28 @@ graph TD
         B -->|No| D["Right Group: [0,1,1], [0,0,0]<br>1 Likes Pizza, 1 Hates<br><b>Gini = 0.5 (Totally Mixed!)</b>"];
     end
 ```
-*   **Computation:** The computer calculates a weighted average of the new impurity: `(2/4)*0.0 + (2/4)*0.5 = 0.25`. The "Information Gain" (how much the impurity went down) is `0.375 - 0.25 = 0.125`.
-*   **Output:** The score for this question is **0.125**.
+*   **Computation:** For a split, we compute the weighted impurity and the information gain. Formally, with \(N\) total samples, \(N_l\) left and \(N_r\) right:
+
+    $$
+    \mathrm{Gini}_{\text{split}} = \frac{N_l}{N}\,\mathrm{Gini}(S_l) + \frac{N_r}{N}\,\mathrm{Gini}(S_r),
+    $$
+    $$
+    \mathrm{Information\ Gain} = \mathrm{Gini}(S) - \mathrm{Gini}_{\text{split}}.
+    $$
+
+    In our split "Likes Video Games?":
+    * Left group (Yes): 2 samples, both like pizza \(\Rightarrow\) \(\mathrm{Gini}(S_l) = 0\) (pure).
+    * Right group (No): 2 samples, 1 likes, 1 does not \(\Rightarrow\) \(p=1/2,\,\mathrm{Gini}(S_r) = 1 - (1/2)^2 - (1/2)^2 = 0.5\).
+    * Weighted impurity:
+      \[
+      \mathrm{Gini}_{\text{split}} = \frac{2}{4}\cdot 0 + \frac{2}{4}\cdot 0.5 = 0.25.
+      \]
+    * Information Gain:
+      \[
+      \mathrm{Information\ Gain} = 0.375 - 0.25 = 0.125.
+      \]
+
+*   **Output:** The score for this question is \(0.125\).
 
 **Step 3: Test the Second Question ("Likes Superheroes?")**
 Now the computer "forgets" the last split and tries again with the next question.
@@ -181,8 +232,9 @@ graph TD
         B -->|No| D["Right Group: [1,0,1], [0,0,0]<br>1 Likes Pizza, 1 Hates<br><b>Gini = 0.5 (Totally Mixed!)</b>"];
     end
 ```
-*   **Computation:** The weighted average is the same: `(2/4)*0.0 + (2/4)*0.5 = 0.25`. The "Information Gain" is also `0.375 - 0.25 = 0.125`.
-*   **Output:** The score for this question is **0.125**.
+*   **Computation:** This yields the same numeric result by symmetry, so its information gain is also \(0.125\).
+
+*   **Output:** The score for this question is \(0.125\).
 
 **Step 4: The Decision**
 The computer compares the scores. In this case, they're tied! In a tie, the computer just picks the first one it tried.
@@ -194,7 +246,9 @@ The computer now has the root of its tree! It then repeats this *entire process*
 2.  It runs the `get_best_split` logic on the "No" group.
 This is the "endless mirror" of recursion in action! It continues until the groups are pure.
 
-This whole process of testing splits and finding the one that lowers the impurity score the most is the "magic" inside the `.fit()` method!
+> **🧠 How Experts Think**
+>
+> This process of finding the best question is similar to how an expert, like a doctor, diagnoses an illness. They don't ask random questions. They ask the one question that gives them the most information to narrow down the possibilities. A doctor who asks, "Do you have a fever?" is making a "split" that provides a high "information gain." The AI is learning to think like an expert!
 
 #### **The Full Code: A Real Decision Tree**
 This code puts all those ideas together. It's complex, but now you can see the "thinking" that happens inside it.

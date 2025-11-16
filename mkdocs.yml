@@ -1,8 +1,8 @@
 site_name: SimplestLearn Wiki
 site_description: Learn AI, ML, and Deep Learning in the simplest way possible
 site_author: Your Learning Journey
-repo_url: https://github.com/yourusername/SimplestLearn
-repo_name: SimplestLearn
+repo_url: https://github.com/trinhdoduyhungss/simplestlearn.github.io
+repo_name: simplestlearn.github.io
 
 theme:
   name: material
@@ -37,6 +37,11 @@ nav:
     - Lesson 4 - Getting Your Data Ready: lessons/lesson4.md
     - Lesson 5 - Your First AI Model: lessons/lesson5.md
     - Lesson 6 - Under the Hood: lessons/lesson6.md
+    - Lesson 7 - Is Our AI Smart?: lessons/lesson7.md
+    - Lesson 8 - You Are Who Your Friends Are: lessons/lesson8.md
+    - Lesson 9 - The Friendship Bracelet: lessons/lesson9.md
+    - Lesson 10 - The Art of Measurement: lessons/lesson10.md
+    - Lesson 11 - Introduction to Neural Networks: lessons/lesson11.md
 
 plugins:
   - search:

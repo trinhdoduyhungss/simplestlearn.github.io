@@ -535,7 +535,7 @@
   
   
   <span class="md-ellipsis">
-    Lesson 6 - Under the Hood
+    Lesson 6 - Decision Tree from scratch
     
   </span>
   
@@ -604,7 +604,7 @@
   
   
   <span class="md-ellipsis">
-    Lesson 9 - The Friendship Bracelet
+    Lesson 9 - KNN is from scratch
     
   </span>
   
@@ -728,23 +728,83 @@
 <p>Here's a super important secret about computers: <strong>they can't read words, they can only understand numbers.</strong></p>
 <p>If we show a computer a table with "Yes" and "No," it has no idea what that means. We need to translate our words into a language the computer can speak. This is called <strong>encoding</strong>.</p>
 <p>Let's take our pizza dataset from Lesson 1.</p>
-<p><strong>Before (Human-Readable):</strong>
-| Student | Likes Video Games? | Likes Superheroes? | Likes Pizza? |
-|---|---|---|---|
-| Alex | Yes | Yes | Yes |
-| Ben | No | Yes | Yes |
-| Chloe | Yes | No | Yes |
-| David | No | No | No |</p>
+<p><strong>Before (Human-Readable):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Student</th>
+<th>Likes Video Games?</th>
+<th>Likes Superheroes?</th>
+<th>Likes Pizza?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alex</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Ben</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Chloe</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>David</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 <p>To translate this, we can make a simple rule:
 *   <code>Yes</code> will become <code>1</code>
 *   <code>No</code> will become <code>0</code></p>
-<p><strong>After (Computer-Readable):</strong>
-| Student | Likes Video Games? | Likes Superheroes? | Likes Pizza? |
-|---|---|---|---|
-| Alex | 1 | 1 | 1 |
-| Ben | 0 | 1 | 1 |
-| Chloe | 1 | 0 | 1 |
-| David | 0 | 0 | 0 |</p>
+<p><strong>After (Computer-Readable):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Student</th>
+<th>Likes Video Games?</th>
+<th>Likes Superheroes?</th>
+<th>Likes Pizza?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alex</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Ben</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Chloe</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>David</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
 <p>Now <em>that's</em> something a computer can work with! We've successfully encoded our features and labels into numbers.</p>
 <blockquote>
 <p><strong>🤯 Fun Fact: The First Encoders!</strong></p>
@@ -775,10 +835,23 @@
 <li><strong>Make a Smart Guess (Imputation):</strong> A better way is to make a smart guess. Let's look at our other students. If most of them like superheroes, it's a safe bet that Frank might, too. We can fill in the blank with the most common value.</li>
 </ol>
 <p>Let's say most of our students like superheroes. We can "impute" the missing value:</p>
-<p><strong>After (Imputed):</strong>
-| Student | Likes Video Games? | Likes Superheroes? (Imputed) |
-|---|---|---|
-| Frank | Yes | <strong>Yes</strong> |</p>
+<p><strong>After (Imputed):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Student</th>
+<th>Likes Video Games?</th>
+<th>Likes Superheroes? (Imputed)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frank</td>
+<td>Yes</td>
+<td><strong>Yes</strong></td>
+</tr>
+</tbody>
+</table>
 <p>Now our table is complete, and the computer can get back to work!</p>
 <blockquote>
 <p><strong>🧠 Filling in the Blanks</strong></p>

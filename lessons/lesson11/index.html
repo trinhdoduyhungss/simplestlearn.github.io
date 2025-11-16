@@ -798,8 +798,10 @@
 <hr />
 <h3 id="sigmoid">Sigmoid<a class="headerlink" href="#sigmoid" title="Permanent link">&para;</a></h3>
 <p>The Sigmoid function takes any real number and "squashes" it into a range between 0 and 1. This is perfect for the output layer when you need to predict a probability (e.g., the probability of an email being spam).</p>
-<p><strong>Formula:</strong>
-$$ \sigma(z) = \frac{1}{1 + e^{-z}} $$</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+\sigma(z) = \frac{1}{1 + e^{-z}}
+\]</div>
 <p><strong>Visualization (Sigmoid):</strong></p>
 <div align="center" aria-hidden="false" role="img" aria-label="Sigmoid function plot">
 <img src="../assets/diagrams/sigmoid.svg"/>
@@ -809,8 +811,10 @@ $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$</p>
 <hr />
 <h3 id="relu-rectified-linear-unit">ReLU (Rectified Linear Unit)<a class="headerlink" href="#relu-rectified-linear-unit" title="Permanent link">&para;</a></h3>
 <p>ReLU is the most popular activation function for hidden layers. It's incredibly simple and efficient. If the input is positive, it passes it through. If it's negative, it outputs zero.</p>
-<p><strong>Formula:</strong>
-$$ \text{ReLU}(z) = \max(0, z) $$</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+\text{ReLU}(z) = \max(0, z)
+\]</div>
 <p><strong>Visualization (ReLU):</strong></p>
 <div align="center" aria-hidden="false" role="img" aria-label="ReLU function plot">
 <img src="../assets/diagrams/relu.svg"/>
@@ -821,11 +825,15 @@ $$ \text{ReLU}(z) = \max(0, z) $$</p>
 <h3 id="softmax">Softmax<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h3>
 <p>Softmax is a special one, used exclusively in the output layer for multi-class classification problems (e.g., classifying an image as a dog, cat, bird, or fish). It takes the raw outputs for all classes and converts them into a probability distribution, where all the probabilities add up to 1.</p>
 <p><strong>Formula:</strong>
-For a set of raw outputs <span class="arithmatex">\(z_1, z_2, ..., z_k\)</span>, the Softmax for output <span class="arithmatex">\(i\)</span> is:
-$$ \text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{k} e^{z_j}} $$</p>
-<p><strong>Visualization (Softmax example):</strong>
-- Example logits: z = [-1, 0.5, 2.0]
-- Softmax outputs ≈ [0.04, 0.18, 0.78]</p>
+For a set of raw outputs <span class="arithmatex">\(z_1, z_2, ..., z_k\)</span>, the Softmax for output <span class="arithmatex">\(i\)</span> is:</p>
+<div class="arithmatex">\[ 
+\text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{k} e^{z_j}}
+\]</div>
+<p><strong>Visualization (Softmax example):</strong></p>
+<ul>
+<li>Example logits: z = [-1, 0.5, 2.0]</li>
+<li>Softmax outputs ≈ [0.04, 0.18, 0.78]</li>
+</ul>
 <div align="center" aria-hidden="false" role="img" aria-label="Softmax example bar chart">
 <img src="../assets/diagrams/softmax.svg"/>
 </div>

@@ -877,34 +877,37 @@ The computer's first goal is to find the single best question to ask to split th
 <p><strong>Step 1: Calculate the Starting Purity</strong>
 First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1 hater (0). This is a pretty mixed group.
 *   <strong>Computation:</strong> The Gini Impurity for a set S with C classes is defined as:</p>
-<pre><code>$$
+<div class="arithmatex">\[
 \mathrm{Gini}(S) = 1 - \sum_{k=1}^{C} p_k^2
+\]</div>
+<p>where <span class="arithmatex">\(p_k\)</span> is the proportion of samples in S that belong to class <span class="arithmatex">\(k\)</span>.</p>
+<p>In our dataset (two classes: pizza=1, not-pizza=0):
 $$
-
-where \(p_k\) is the proportion of samples in S that belong to class \(k\).
-
-In our dataset (two classes: pizza=1, not-pizza=0):
-\[
 p_1 = \frac{3}{4}, \quad p_0 = \frac{1}{4}.
-\]
-
-Substitute and compute:
-\[
+$$</p>
+<p>Substitute and compute:
+$$
 \begin{aligned}
 \mathrm{Gini}(S)
-  &amp;= 1 - \left(\left(\frac{3}{4}\right)^2 + \left(\frac{1}{4}\right)^2 \right) \\
-  &amp;= 1 - \left(\frac{9}{16} + \frac{1}{16}\right) \\
-  &amp;= 1 - \frac{10}{16} = \frac{6}{16} = 0.375.
+    &amp;= 1 - \left(\left(\frac{3}{4}\right)^2 + \left(\frac{1}{4}\right)^2 \right) \
+    &amp;= 1 - \left(\frac{9}{16} + \frac{1}{16}\right) \
+    &amp;= 1 - \frac{10}{16} = \frac{6}{16} = 0.375.
 \end{aligned}
-\]
-
-Interpretation:
-* 0 means perfectly "pure" (all samples same class).
-* For binary classification, the maximum Gini is \(1 - \tfrac{1}{2} = 0.5\) (when classes are equally mixed).
-* Another useful interpretation: \(\sum_k p_k^2\) is the probability that two randomly selected samples from S have the same label; therefore \(\mathrm{Gini}(S)\) equals the probability two randomly chosen samples have different labels, i.e., how "impure" the set is.
-</code></pre>
+$$</p>
+<p>Interpretation:</p>
 <ul>
-<li><strong>Output:</strong> The starting "impurity" is 0.375. The goal is to ask a question that lowers this number as much as possible.</li>
+<li>
+<p>0 means perfectly "pure" (all samples same class).</p>
+</li>
+<li>
+<p>For binary classification, the maximum Gini is <span class="arithmatex">\(1 - \tfrac{1}{2} = 0.5\)</span> (when classes are equally mixed).</p>
+</li>
+<li>
+<p>Another useful interpretation: <span class="arithmatex">\(\sum_k p_k^2\)</span> is the probability that two randomly selected samples from S have the same label; therefore <span class="arithmatex">\(\mathrm{Gini}(S)\)</span> equals the probability two randomly chosen samples have different labels, i.e., how "impure" the set is.</p>
+</li>
+<li>
+<p><strong>Output:</strong> The starting "impurity" is 0.375. The goal is to ask a question that lowers this number as much as possible.</p>
+</li>
 </ul>
 <pre class="mermaid"><code>graph TD
     subgraph Starting Group
@@ -928,21 +931,25 @@ The computer pretends to split the group based on this question.</p>
 <div class="arithmatex">\[
 \mathrm{Information\ Gain} = \mathrm{Gini}(S) - \mathrm{Gini}_{\text{split}}.
 \]</div>
-<p>In our split "Likes Video Games?":
-* Left group (Yes): 2 samples, both like pizza <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(\mathrm{Gini}(S_l) = 0\)</span> (pure).
-* Right group (No): 2 samples, 1 likes, 1 does not <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(p=1/2,\,\mathrm{Gini}(S_r) = 1 - (1/2)^2 - (1/2)^2 = 0.5\)</span>.</p>
+<p>In our split "Likes Video Games?":</p>
 <ul>
 <li>
+<p>Left group (Yes): 2 samples, both like pizza <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(\mathrm{Gini}(S_l) = 0\)</span> (pure).</p>
+</li>
+<li>
+<p>Right group (No): 2 samples, 1 likes, 1 does not <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(p=1/2,\,\mathrm{Gini}(S_r) = 1 - (1/2)^2 - (1/2)^2 = 0.5\)</span>.</p>
+</li>
+<li>
 <p>Weighted impurity:
-[
+$$
 \mathrm{Gini}_{\text{split}} = \frac{2}{4}\cdot 0 + \frac{2}{4}\cdot 0.5 = 0.25.
-]</p>
+$$</p>
 </li>
 <li>
 <p>Information Gain:
-[
+$$
 \mathrm{Information\ Gain} = 0.375 - 0.25 = 0.125.
-]</p>
+$$</p>
 </li>
 <li>
 <p><strong>Output:</strong> The score for this question is <span class="arithmatex">\(0.125\)</span>.</p>

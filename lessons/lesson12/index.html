@@ -768,9 +768,15 @@
 <h1 id="lesson-12-the-man-behind-the-curtain-building-a-neural-network-from-scratch">Lesson 12: The Man Behind the Curtain - Building a Neural Network from Scratch 🛠️<a class="headerlink" href="#lesson-12-the-man-behind-the-curtain-building-a-neural-network-from-scratch" title="Permanent link">&para;</a></h1>
 <p>In our last lesson, we used a high-level library, <code>scikit-learn</code>, to create a neural network in just a few lines of code. It felt like magic! But true understanding—the kind that separates a good developer from a great one—comes from looking behind the curtain.</p>
 <p>Today, we're going to do just that. We will build our own neural network from scratch using only Python and NumPy. This process will demystify the "magic" and give you a deep, intuitive understanding of how a machine truly learns.</p>
-<p>We'll embark on a two-part journey:
-1.  <strong>The Perceptron:</strong> We'll start by building the simplest possible neuron, the ancestor of all modern AI.
-2.  <strong>The Multi-Layer Perceptron (MLP):</strong> We'll then evolve our simple neuron into a powerful, multi-layered network capable of solving complex problems.</p>
+<p>We'll embark on a two-part journey:</p>
+<ol>
+<li>
+<p><strong>The Perceptron:</strong> We'll start by building the simplest possible neuron, the ancestor of all modern AI.</p>
+</li>
+<li>
+<p><strong>The Multi-Layer Perceptron (MLP):</strong> We'll then evolve our simple neuron into a powerful, multi-layered network capable of solving complex problems.</p>
+</li>
+</ol>
 <p>Let's begin.</p>
 <hr />
 <h2 id="part-1-the-original-neuron-the-perceptron">Part 1: The Original Neuron - The Perceptron<a class="headerlink" href="#part-1-the-original-neuron-the-perceptron" title="Permanent link">&para;</a></h2>
@@ -778,9 +784,13 @@
 <h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
 <p>The Perceptron operates on a simple principle: it takes a set of inputs, weighs their importance, and if the combined evidence is strong enough, it "fires."</p>
 <ol>
-<li><strong>Weighted Sum:</strong> It calculates a weighted sum of its inputs (<span class="arithmatex">\(x_i\)</span>) and adds a bias (<span class="arithmatex">\(b\)</span>). The weights (<span class="arithmatex">\(w_i\)</span>) represent the importance of each input, and the bias acts as a general threshold for firing.
-    $$ z = (w_1x_1 + w_2x_2 + ... + w_nx_n) + b $$</li>
-<li><strong>Activation:</strong> It passes this sum through a <strong>step function</strong>. If the sum is greater than zero, it outputs 1 (fires); otherwise, it outputs 0 (does not fire).</li>
+<li>
+<p><strong>Weighted Sum:</strong> It calculates a weighted sum of its inputs (<span class="arithmatex">\(x_i\)</span>) and adds a bias (<span class="arithmatex">\(b\)</span>). The weights (<span class="arithmatex">\(w_i\)</span>) represent the importance of each input, and the bias acts as a general threshold for firing.
+    $$ z = (w_1x_1 + w_2x_2 + ... + w_nx_n) + b $$</p>
+</li>
+<li>
+<p><strong>Activation:</strong> It passes this sum through a <strong>step function</strong>. If the sum is greater than zero, it outputs 1 (fires); otherwise, it outputs 0 (does not fire).</p>
+</li>
 </ol>
 <h3 id="the-code-building-a-perceptron">The Code: Building a Perceptron<a class="headerlink" href="#the-code-building-a-perceptron" title="Permanent link">&para;</a></h3>
 <p>Here is the implementation in Python. The <code>fit</code> method contains the core learning algorithm.</p>
@@ -823,18 +833,26 @@
 <h3 id="breakdown-the-fit-method">Breakdown: The <code>fit</code> Method<a class="headerlink" href="#breakdown-the-fit-method" title="Permanent link">&para;</a></h3>
 <p>The <code>fit</code> method is where the Perceptron learns. For each training example, it performs a simple, elegant update:</p>
 <ol>
-<li><strong>Make a Prediction:</strong> It computes the <code>linear_output</code> and passes it through the <code>_step_function</code> to get a prediction (0 or 1).
+<li>
+<p><strong>Make a Prediction:</strong> It computes the <code>linear_output</code> and passes it through the <code>_step_function</code> to get a prediction (0 or 1).
     <div class="highlight"><pre><span></span><code><span class="n">linear_output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span>
 <span class="n">y_predicted</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">activation_func</span><span class="p">(</span><span class="n">linear_output</span><span class="p">)</span>
-</code></pre></div></li>
-<li><strong>Calculate the Error:</strong> It finds the difference between the true label (<code>y_[idx]</code>) and its prediction.</li>
-<li><strong>Calculate the Update:</strong> It multiplies the error by the <code>learning_rate</code>. If the prediction was correct, the error is 0, and no update occurs!
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Calculate the Error:</strong> It finds the difference between the true label (<code>y_[idx]</code>) and its prediction.</p>
+</li>
+<li>
+<p><strong>Calculate the Update:</strong> It multiplies the error by the <code>learning_rate</code>. If the prediction was correct, the error is 0, and no update occurs!
     <div class="highlight"><pre><span></span><code><span class="n">update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="p">(</span><span class="n">y_</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_predicted</span><span class="p">)</span>
-</code></pre></div></li>
-<li><strong>Adjust Weights and Bias:</strong> It nudges the weights and bias in the direction that would reduce the error. If it guessed 0 but the answer was 1, it increases the weights and bias to make the output larger next time, and vice-versa.
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Adjust Weights and Bias:</strong> It nudges the weights and bias in the direction that would reduce the error. If it guessed 0 but the answer was 1, it increases the weights and bias to make the output larger next time, and vice-versa.
     <div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">+=</span> <span class="n">update</span> <span class="o">*</span> <span class="n">x_i</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">+=</span> <span class="n">update</span>
-</code></pre></div></li>
+</code></pre></div></p>
+</li>
 </ol>
 <p>The Perceptron is powerful, but it has a famous weakness that stumped AI researchers for years.</p>
 <hr />
@@ -877,9 +895,15 @@
 <hr />
 <h2 id="part-3-the-comeback-the-multi-layer-perceptron-mlp">Part 3: The Comeback - The Multi-Layer Perceptron (MLP)<a class="headerlink" href="#part-3-the-comeback-the-multi-layer-perceptron-mlp" title="Permanent link">&para;</a></h2>
 <p>By adding a <strong>hidden layer</strong> of neurons, the network can learn non-linear patterns. It's like giving the Perceptron multiple lines to draw with, allowing it to create complex decision boundaries. This is a <strong>Multi-Layer Perceptron (MLP)</strong>.</p>
-<p>To build one, we need two key upgrades:
-1.  A <strong>smooth activation function</strong> (like Sigmoid) that allows us to use calculus to measure error.
-2.  <strong>Backpropagation</strong>, an algorithm to figure out how much each weight and bias in the network contributed to the final error.</p>
+<p>To build one, we need two key upgrades:</p>
+<ol>
+<li>
+<p>A <strong>smooth activation function</strong> (like Sigmoid) that allows us to use calculus to measure error.</p>
+</li>
+<li>
+<p><strong>Backpropagation</strong>, an algorithm to figure out how much each weight and bias in the network contributed to the final error.</p>
+</li>
+</ol>
 <h3 id="the-code-building-an-mlp">The Code: Building an MLP<a class="headerlink" href="#the-code-building-an-mlp" title="Permanent link">&para;</a></h3>
 <p>This code looks more complex, but the principles are the same. We'll break it down completely.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -940,19 +964,25 @@
 <h3 id="breakdown-the-backward-method-backpropagation">Breakdown: The <code>backward</code> Method (Backpropagation)<a class="headerlink" href="#breakdown-the-backward-method-backpropagation" title="Permanent link">&para;</a></h3>
 <p>This is the "learning" part. It's a brilliant application of the chain rule from calculus to figure out which connections to blame for an error.</p>
 <ol>
-<li><strong>Error at Output Layer:</strong> It calculates the error of the final prediction (<code>output_error</code>). It then multiplies this by the derivative of the sigmoid function. This <code>output_delta</code> tells us the direction and magnitude of the error for the final layer's input.
+<li>
+<p><strong>Error at Output Layer:</strong> It calculates the error of the final prediction (<code>output_error</code>). It then multiplies this by the derivative of the sigmoid function. This <code>output_delta</code> tells us the direction and magnitude of the error for the final layer's input.
     <div class="highlight"><pre><span></span><code><span class="n">output_error</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">output</span>
 <span class="n">output_delta</span> <span class="o">=</span> <span class="n">output_error</span> <span class="o">*</span> <span class="n">sigmoid_derivative</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</code></pre></div></li>
-<li><strong>Propagate Error to Hidden Layer:</strong> It "propagates" this error backward. It uses the <code>output_delta</code> and the weights of the second layer (<code>self.W2</code>) to calculate how much the hidden layer contributed to the mistake (<code>hidden_error</code>). This is then used to calculate <code>hidden_delta</code>.
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Propagate Error to Hidden Layer:</strong> It "propagates" this error backward. It uses the <code>output_delta</code> and the weights of the second layer (<code>self.W2</code>) to calculate how much the hidden layer contributed to the mistake (<code>hidden_error</code>). This is then used to calculate <code>hidden_delta</code>.
     <div class="highlight"><pre><span></span><code><span class="n">hidden_error</span> <span class="o">=</span> <span class="n">output_delta</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">W2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 <span class="n">hidden_delta</span> <span class="o">=</span> <span class="n">hidden_error</span> <span class="o">*</span> <span class="n">sigmoid_derivative</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_output</span><span class="p">)</span>
-</code></pre></div></li>
-<li><strong>Update Weights and Biases:</strong> Now knowing how much each layer was "at fault," it nudges the weights and biases in the direction that will reduce the error on the next attempt.
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Update Weights and Biases:</strong> Now knowing how much each layer was "at fault," it nudges the weights and biases in the direction that will reduce the error on the next attempt.
     <div class="highlight"><pre><span></span><code><span class="c1"># Update weights and biases for the hidden-to-output connection</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">W2</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_output</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">output_delta</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr</span>
 <span class="c1"># ...and so on for the other weights and biases.</span>
-</code></pre></div></li>
+</code></pre></div></p>
+</li>
 </ol>
 <p>By repeating this forward and backward pass thousands of times, the network slowly minimizes its error and masters the task.</p>
 <hr />
@@ -1023,6 +1053,8 @@
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../assets/js/mathjax-config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

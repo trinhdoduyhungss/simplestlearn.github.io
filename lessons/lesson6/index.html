@@ -959,10 +959,16 @@ Now the computer "forgets" the last split and tries again with the next question
 The computer compares the scores. In this case, they're tied! In a tie, the computer just picks the first one it tried.
 *   <strong>The Winner:</strong> The best first question is "Likes Video Games?".</p>
 <p><strong>Step 5: The Recursion</strong>
-The computer now has the root of its tree! It then repeats this <em>entire process</em> on the smaller groups.
-1.  It runs the <code>get_best_split</code> logic on the "Yes" group.
-2.  It runs the <code>get_best_split</code> logic on the "No" group.
-This is the "endless mirror" of recursion in action! It continues until the groups are pure.</p>
+The computer now has the root of its tree! It then repeats this <em>entire process</em> on the smaller groups.</p>
+<ol>
+<li>
+<p>It runs the <code>get_best_split</code> logic on the "Yes" group.</p>
+</li>
+<li>
+<p>It runs the <code>get_best_split</code> logic on the "No" group.</p>
+</li>
+</ol>
+<p>This is the "endless mirror" of recursion in action! It continues until the groups are pure.</p>
 <blockquote>
 <p><strong>🧠 How Experts Think</strong></p>
 <p>This process of finding the best question is similar to how an expert, like a doctor, diagnoses an illness. They don't ask random questions. They ask the one question that gives them the most information to narrow down the possibilities. A doctor who asks, "Do you have a fever?" is making a "split" that provides a high "information gain." The AI is learning to think like an expert!</p>
@@ -1147,6 +1153,8 @@ This is the "endless mirror" of recursion in action! It continues until the grou
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../assets/js/mathjax-config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

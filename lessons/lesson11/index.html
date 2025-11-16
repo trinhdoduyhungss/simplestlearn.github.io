@@ -749,32 +749,50 @@
 <h2 id="part-1-the-dream-team-what-is-a-neural-network">Part 1: The Dream Team - What is a Neural Network?<a class="headerlink" href="#part-1-the-dream-team-what-is-a-neural-network" title="Permanent link">&para;</a></h2>
 <p>Imagine you're trying to decide if a picture shows a cat or a dog. You might assemble a team of experts.</p>
 <ul>
-<li>One expert only looks for pointy ears.</li>
-<li>Another only looks for whiskers.</li>
-<li>A third looks for the shape of the snout.</li>
-<li>A fourth looks for the texture of the fur.</li>
+<li>
+<p>One expert only looks for pointy ears.</p>
+</li>
+<li>
+<p>Another only looks for whiskers.</p>
+</li>
+<li>
+<p>A third looks for the shape of the snout.</p>
+</li>
+<li>
+<p>A fourth looks for the texture of the fur.</p>
+</li>
 </ul>
 <p>No single expert can make the final call, but by working together and weighing each other's opinions, they can make a very accurate guess. A neural network is exactly like this, but the "experts" are tiny computing units called <strong>neurons</strong>.</p>
 <p>These neurons are organized into <strong>layers</strong>:</p>
 <ol>
-<li><strong>Input Layer:</strong> This is where the data comes in. For our cat/dog problem, this layer would take the raw pixels of the image.</li>
-<li><strong>Hidden Layers:</strong> This is the core of the network. One or more hidden layers of "experts" work together to find patterns. The first hidden layer might find simple shapes (lines, curves), the next might combine those to find eyes and ears, and so on. This is where the "deep" in Deep Learning comes from!</li>
-<li><strong>Output Layer:</strong> This layer gives the final answer. After listening to all the hidden experts, it might say, "I'm 95% sure this is a dog."</li>
+<li>
+<p><strong>Input Layer:</strong> This is where the data comes in. For our cat/dog problem, this layer would take the raw pixels of the image.</p>
+</li>
+<li>
+<p><strong>Hidden Layers:</strong> This is the core of the network. One or more hidden layers of "experts" work together to find patterns. The first hidden layer might find simple shapes (lines, curves), the next might combine those to find eyes and ears, and so on. This is where the "deep" in Deep Learning comes from!</p>
+</li>
+<li>
+<p><strong>Output Layer:</strong> This layer gives the final answer. After listening to all the hidden experts, it might say, "I'm 95% sure this is a dog."</p>
+</li>
 </ol>
 <p>Here’s what that looks like:</p>
-<div align="center"><img src="https://trinhdoduyhungss.github.io/simplestlearn.github.io/assets/diagrams/nn-diagram.svg"/></div>
+<div align="center"><img src="../assets/diagrams/nn-diagram.svg"/></div>
 
 <blockquote>
-<p><strong>🧠 It's All in the Connections!</strong></p>
+<p><strong>🧠 Psychologist's Corner: It's All in the Connections!</strong></p>
 <p>The design of neural networks is inspired by the human brain. Your brain isn't powerful because of any single neuron; it's powerful because of the <em>trillions</em> of connections between them. A neural network learns by strengthening or weakening the connections between its neurons, just like your brain creates and strengthens pathways as you learn a new skill.</p>
 </blockquote>
 <hr />
 <h2 id="part-2-the-neurons-on-switch-activation-functions">Part 2: The Neuron's "On" Switch - Activation Functions<a class="headerlink" href="#part-2-the-neurons-on-switch-activation-functions" title="Permanent link">&para;</a></h2>
 <p>So, what does a single neuron <em>actually</em> do? It performs two simple steps:</p>
 <ol>
-<li><strong>Weighted Sum:</strong> It takes all the information from the previous layer, multiplies each piece by a <strong>weight</strong> (its importance), and sums it all up, adding a <strong>bias</strong> term. This is the neuron's raw input, often called <code>z</code>.
-    <span class="arithmatex">\(z = (w_1x_1 + w_2x_2 + ... + w_nx_n) + b\)</span></li>
-<li><strong>Activation:</strong> It passes this sum <code>z</code> through an <strong>activation function</strong> to decide what signal to pass to the next layer.</li>
+<li>
+<p><strong>Weighted Sum:</strong> It takes all the information from the previous layer, multiplies each piece by a <strong>weight</strong> (its importance), and sums it all up, adding a <strong>bias</strong> term. This is the neuron's raw input, often called <code>z</code>.
+    <span class="arithmatex">\(z = (w_1x_1 + w_2x_2 + ... + w_nx_n) + b\)</span></p>
+</li>
+<li>
+<p><strong>Activation:</strong> It passes this sum <code>z</code> through an <strong>activation function</strong> to decide what signal to pass to the next layer.</p>
+</li>
 </ol>
 <p>Think of the activation function as a light's dimmer switch. It decides how "bright" the neuron's output signal should be based on the raw input. Let's look at the most popular ones.</p>
 <hr />
@@ -784,7 +802,7 @@
 $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$</p>
 <p><strong>Visualization (Sigmoid):</strong></p>
 <div align="center" aria-hidden="false" role="img" aria-label="Sigmoid function plot">
-<img src="https://trinhdoduyhungss.github.io/simplestlearn.github.io/assets/diagrams/sigmoid.svg"/>
+<img src="../assets/diagrams/sigmoid.svg"/>
 </div>
 
 <p>As the input <code>z</code> gets very large, the output gets close to 1. As it gets very small (very negative), the output gets close to 0.</p>
@@ -795,7 +813,7 @@ $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$</p>
 $$ \text{ReLU}(z) = \max(0, z) $$</p>
 <p><strong>Visualization (ReLU):</strong></p>
 <div align="center" aria-hidden="false" role="img" aria-label="ReLU function plot">
-<img src="https://trinhdoduyhungss.github.io/simplestlearn.github.io/assets/diagrams/relu.svg"/>
+<img src="../assets/diagrams/relu.svg"/>
 </div>
 
 <p>This "on/off" behavior helps the network learn faster and is less computationally expensive than Sigmoid.</p>
@@ -809,7 +827,7 @@ $$ \text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{k} e^{z_j}} $$</p>
 - Example logits: z = [-1, 0.5, 2.0]
 - Softmax outputs ≈ [0.04, 0.18, 0.78]</p>
 <div align="center" aria-hidden="false" role="img" aria-label="Softmax example bar chart">
-<img src="https://trinhdoduyhungss.github.io/simplestlearn.github.io/assets/diagrams/softmax.svg"/>
+<img src="../assets/diagrams/softmax.svg"/>
 </div>
 
 <p>This ensures you can see how softmax pushes logits into a probability distribution where the largest logit dominates the final output.</p>
@@ -817,9 +835,15 @@ $$ \text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{k} e^{z_j}} $$</p>
 <h2 id="part-3-learning-from-mistakes-how-a-network-trains">Part 3: Learning from Mistakes - How a Network Trains<a class="headerlink" href="#part-3-learning-from-mistakes-how-a-network-trains" title="Permanent link">&para;</a></h2>
 <p>How does the network learn the right <strong>weights</strong> for its connections? It trains, just like a person.</p>
 <ol>
-<li><strong>Forward Pass:</strong> It takes a piece of data (e.g., a picture of a dog) and makes a guess. This is called the <strong>forward pass</strong>.</li>
-<li><strong>Calculate Error (Loss):</strong> It compares its guess to the correct answer. The difference is the <strong>error</strong> or <strong>loss</strong>.</li>
-<li><strong>Backward Pass (Backpropagation):</strong> This is the magic! The network works backward from the error and figures out which connections were most responsible for the mistake. It then adjusts the weights on those connections to do better next time. This process is called <strong>backpropagation</strong>.</li>
+<li>
+<p><strong>Forward Pass:</strong> It takes a piece of data (e.g., a picture of a dog) and makes a guess. This is called the <strong>forward pass</strong>.</p>
+</li>
+<li>
+<p><strong>Calculate Error (Loss):</strong> It compares its guess to the correct answer. The difference is the <strong>error</strong> or <strong>loss</strong>.</p>
+</li>
+<li>
+<p><strong>Backward Pass (Backpropagation):</strong> This is the magic! The network works backward from the error and figures out which connections were most responsible for the mistake. It then adjusts the weights on those connections to do better next time. This process is called <strong>backpropagation</strong>.</p>
+</li>
 </ol>
 <p>It repeats this process thousands or millions of times, getting a little smarter with each example.</p>
 <hr />
@@ -930,6 +954,8 @@ $$ \text{Softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{k} e^{z_j}} $$</p>
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../assets/js/mathjax-config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

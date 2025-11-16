@@ -749,18 +749,36 @@
 <p>Today, we're going to explore the "Art of Measurement." We'll learn why choosing the right way to measure distance is critical, and we'll discover new types of "friendship bracelets" for different kinds of data.</p>
 <hr />
 <h3 id="part-1-why-distance-can-be-tricky-feature-scaling">Part 1: Why Distance Can Be Tricky (Feature Scaling)<a class="headerlink" href="#part-1-why-distance-can-be-tricky-feature-scaling" title="Permanent link">&para;</a></h3>
-<p>Imagine we have a new dataset to predict if a person is a "Super Gamer." Our features are:
-1.  <strong>Hours Played Per Week:</strong> (e.g., 5, 10, 20)
-2.  <strong>Has a Gaming PC:</strong> (1 for Yes, 0 for No)</p>
-<p>Let's compare two people:
-*   <strong>Alice:</strong> Plays 10 hours, has a gaming PC. <code>[10, 1]</code>
-*   <strong>Bob:</strong> Plays 12 hours, does not have a gaming PC. <code>[12, 0]</code></p>
+<p>Imagine we have a new dataset to predict if a person is a "Super Gamer." Our features are:</p>
+<ol>
+<li>
+<p><strong>Hours Played Per Week:</strong> (e.g., 5, 10, 20)</p>
+</li>
+<li>
+<p><strong>Has a Gaming PC:</strong> (1 for Yes, 0 for No)</p>
+</li>
+</ol>
+<p>Let's compare two people:</p>
+<ul>
+<li>
+<p><strong>Alice:</strong> Plays 10 hours, has a gaming PC. <code>[10, 1]</code></p>
+</li>
+<li>
+<p><strong>Bob:</strong> Plays 12 hours, does not have a gaming PC. <code>[12, 0]</code></p>
+</li>
+</ul>
 <p>If we use our Euclidean distance formula, the difference in hours played (<code>(12-10)^2 = 4</code>) has a much bigger impact on the distance than the difference in having a PC (<code>(0-1)^2 = 1</code>). The algorithm will think that the "Hours Played" feature is more important, just because it has bigger numbers!</p>
 <p><strong>The Solution: Normalization (The Great Equalizer)</strong>
 To fix this, we use a technique called <strong>feature scaling</strong> or <strong>normalization</strong>. The goal is to get all our features onto the same scale (usually from 0 to 1).</p>
-<p>For example, if the maximum hours played is 20, we can divide every value in that column by 20.
-*   Alice's scaled data: <code>[10/20, 1]</code> = <code>[0.5, 1]</code>
-*   Bob's scaled data: <code>[12/20, 0]</code> = <code>[0.6, 0]</code></p>
+<p>For example, if the maximum hours played is 20, we can divide every value in that column by 20.</p>
+<ul>
+<li>
+<p>Alice's scaled data: <code>[10/20, 1]</code> = <code>[0.5, 1]</code></p>
+</li>
+<li>
+<p>Bob's scaled data: <code>[12/20, 0]</code> = <code>[0.6, 0]</code></p>
+</li>
+</ul>
 <p>Now, both features have a similar scale, and our distance calculation will be fair. This is a critical, professional step in almost all machine learning projects!</p>
 <hr />
 <h3 id="part-2-more-ways-to-measure-friendship">Part 2: More Ways to Measure Friendship<a class="headerlink" href="#part-2-more-ways-to-measure-friendship" title="Permanent link">&para;</a></h3>
@@ -775,13 +793,21 @@ d(p_1, p_2) = \sqrt{\sum_{i=1}^{n} (p_{1i} - p_{2i})^2}
 <p>It's calculated by summing the absolute differences of the features.
 $$
 d(p_1, p_2) = \sum_{i=1}^{n} |p_{1i} - p_{2i}|
-$$
-*   <strong>When to use it:</strong> It's useful when your features represent different, unrelated concepts, and you don't want a large difference in one feature to dominate the others.</p>
+$$</p>
+<ul>
+<li><strong>When to use it:</strong> It's useful when your features represent different, unrelated concepts, and you don't want a large difference in one feature to dominate the others.</li>
+</ul>
 <h4 id="3-cosine-similarity-the-compass"><strong>3. Cosine Similarity (The Compass)</strong><a class="headerlink" href="#3-cosine-similarity-the-compass" title="Permanent link">&para;</a></h4>
 <p>This one is a bit different. Instead of measuring the distance between two points, it measures the <strong>angle</strong> between them. Are they pointing in the same direction?</p>
-<p><strong>The Analogy:</strong> Imagine two friends are describing a movie.
-*   <strong>Friend A:</strong> "It was a cool, cool movie."
-*   <strong>Friend B:</strong> "It was a cool, fun, awesome, great movie."</p>
+<p><strong>The Analogy:</strong> Imagine two friends are describing a movie.</p>
+<ul>
+<li>
+<p><strong>Friend A:</strong> "It was a cool, cool movie."</p>
+</li>
+<li>
+<p><strong>Friend B:</strong> "It was a cool, fun, awesome, great movie."</p>
+</li>
+</ul>
 <p>If we just count words, their descriptions are different. But the <em>meaning</em> or <em>direction</em> of their comments is very similar. Cosine similarity is great at capturing this! It's not about the magnitude (how many words they used), but the direction (the sentiment).</p>
 <ul>
 <li><strong>When to use it:</strong> This is the king of text analysis! It's used in search engines and document analysis to find texts that are about the same topic, even if they don't use the exact same words.</li>
@@ -789,9 +815,15 @@ $$
 <h4 id="4-hamming-distance-the-typo-detector"><strong>4. Hamming Distance (The Typo Detector)</strong><a class="headerlink" href="#4-hamming-distance-the-typo-detector" title="Permanent link">&para;</a></h4>
 <p>What if our data isn't numbers at all, but categories or words?</p>
 <p><strong>The Analogy:</strong> This is like playing "spot the difference." You compare two things and count how many positions are different.</p>
-<p>Let's compare two students based on their preferences:
-*   <strong>Student A:</strong> <code>["Likes Action", "Likes Comedy", "Hates Horror"]</code>
-*   <strong>Student B:</strong> <code>["Likes Action", "Hates Comedy", "Hates Horror"]</code></p>
+<p>Let's compare two students based on their preferences:</p>
+<ul>
+<li>
+<p><strong>Student A:</strong> <code>["Likes Action", "Likes Comedy", "Hates Horror"]</code></p>
+</li>
+<li>
+<p><strong>Student B:</strong> <code>["Likes Action", "Hates Comedy", "Hates Horror"]</code></p>
+</li>
+</ul>
 <p>The Hamming distance is <strong>1</strong>, because they only differ in one position ("Likes Comedy" vs. "Hates Comedy").</p>
 <ul>
 <li><strong>When to use it:</strong> It's perfect for comparing any kind of categorical data, especially strings or binary code.</li>
@@ -897,6 +929,8 @@ $$
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../assets/js/mathjax-config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

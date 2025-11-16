@@ -745,14 +745,26 @@ In this case, Frank's three closest "friends" on the graph are Alex, Chloe, and 
 <h3 id="part-3-making-a-prediction-majority-vote">Part 3: Making a Prediction (Majority Vote)<a class="headerlink" href="#part-3-making-a-prediction-majority-vote" title="Permanent link">&para;</a></h3>
 <p>Once we have our K-nearest neighbors, making a prediction for classification is easy: <strong>it's a majority vote!</strong></p>
 <ol>
-<li><strong>Look at the neighbors' labels:</strong><ul>
-<li>Alex: Likes Pizza</li>
-<li>Chloe: Likes Pizza</li>
-<li>Ben: Likes Pizza</li>
+<li>
+<p><strong>Look at the neighbors' labels:</strong></p>
+<ul>
+<li>
+<p>Alex: Likes Pizza</p>
+</li>
+<li>
+<p>Chloe: Likes Pizza</p>
+</li>
+<li>
+<p>Ben: Likes Pizza</p>
+</li>
 </ul>
 </li>
-<li><strong>Count the votes:</strong> That's 3 votes for "Likes Pizza" and 0 votes for "Doesn't Like Pizza."</li>
-<li><strong>Make the prediction:</strong> The majority wins! We predict that Frank will like pizza.</li>
+<li>
+<p><strong>Count the votes:</strong> That's 3 votes for "Likes Pizza" and 0 votes for "Doesn't Like Pizza."</p>
+</li>
+<li>
+<p><strong>Make the prediction:</strong> The majority wins! We predict that Frank will like pizza.</p>
+</li>
 </ol>
 <p>It's that intuitive!</p>
 <blockquote>
@@ -762,14 +774,30 @@ In this case, Frank's three closest "friends" on the graph are Alex, Chloe, and 
 <hr />
 <h3 id="part-4-what-about-regression-averaging-the-friends">Part 4: What About Regression? (Averaging the Friends)<a class="headerlink" href="#part-4-what-about-regression-averaging-the-friends" title="Permanent link">&para;</a></h3>
 <p>KNN is amazing because it can do regression, too! But instead of a vote, it takes an <strong>average</strong>.</p>
-<p>Let's say we want to predict a new student's score on a math test.
-1.  We find the <strong>K=3</strong> closest neighbors (the students who have similar study habits, maybe).
-2.  We look at their test scores: Student A got a 90, Student B got a 95, and Student C got an 88.
-3.  Instead of voting, we <strong>average</strong> their scores: <code>(90 + 95 + 88) / 3 = 91</code>.
-4.  Our prediction for the new student's test score is a 91!</p>
-<p>So, for KNN:
-*   <strong>Classification</strong> = Majority Vote
-*   <strong>Regression</strong> = Average</p>
+<p>Let's say we want to predict a new student's score on a math test.</p>
+<ol>
+<li>
+<p>We find the <strong>K=3</strong> closest neighbors (the students who have similar study habits, maybe).</p>
+</li>
+<li>
+<p>We look at their test scores: Student A got a 90, Student B got a 95, and Student C got an 88.</p>
+</li>
+<li>
+<p>Instead of voting, we <strong>average</strong> their scores: <code>(90 + 95 + 88) / 3 = 91</code>.</p>
+</li>
+<li>
+<p>Our prediction for the new student's test score is a 91!</p>
+</li>
+</ol>
+<p>So, for KNN:</p>
+<ul>
+<li>
+<p><strong>Classification</strong> = Majority Vote</p>
+</li>
+<li>
+<p><strong>Regression</strong> = Average</p>
+</li>
+</ul>
 <hr />
 <h3 id="part-5-the-code-knn-in-scikit-learn">Part 5: The Code - KNN in Scikit-learn<a class="headerlink" href="#part-5-the-code-knn-in-scikit-learn" title="Permanent link">&para;</a></h3>
 <p>Here's the best part. Because <code>scikit-learn</code> is so well-designed, swapping our Decision Tree for a KNN model is incredibly easy. The code is almost identical!</p>
@@ -863,6 +891,8 @@ In this case, Frank's three closest "friends" on the graph are Alex, Chloe, and 
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../assets/js/mathjax-config.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

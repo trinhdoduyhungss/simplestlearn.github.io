@@ -42,6 +42,7 @@ nav:
     - Lesson 9 - The Friendship Bracelet: lessons/lesson9.md
     - Lesson 10 - The Art of Measurement: lessons/lesson10.md
     - Lesson 11 - Introduction to Neural Networks: lessons/lesson11.md
+    - Lesson 12 - Under the Hood Neural Networks: lessons/lesson12.md
 
 plugins:
   - search:
@@ -67,6 +68,7 @@ markdown_extensions:
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
   - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  - assets/js/mermaid-init.js
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css

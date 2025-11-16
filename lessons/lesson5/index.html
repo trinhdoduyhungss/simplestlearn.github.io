@@ -561,6 +561,144 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 7 - Is Our AI Smart?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 8 - You Are Who Your Friends Are
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 9 - The Friendship Bracelet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 10 - The Art of Measurement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 11 - Introduction to Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 12 - Under the Hood Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -594,22 +732,16 @@
 <hr />
 <h3 id="part-1-what-is-a-decision-tree-a-20-questions-game">Part 1: What is a Decision Tree? (A "20 Questions" Game)<a class="headerlink" href="#part-1-what-is-a-decision-tree-a-20-questions-game" title="Permanent link">&para;</a></h3>
 <p>A Decision Tree is basically a flowchart that the computer learns all by itself. It's like playing a game of "20 Questions." You ask a series of yes/no questions to narrow down the possibilities and arrive at a final answer.</p>
-<p>Imagine you're trying to guess an animal. You might ask:</p>
-<ul>
-<li>
-<p>"Does it live in the water?" (No)</p>
-</li>
-<li>
-<p>"Does it have four legs?" (Yes)</p>
-</li>
-<li>
-<p>"Does it bark?" (Yes)</p>
-</li>
-<li>
-<p>"It must be a dog!"</p>
-</li>
-</ul>
+<p>Imagine you're trying to guess an animal. You might ask:
+*   "Does it live in the water?" (No)
+*   "Does it have four legs?" (Yes)
+*   "Does it bark?" (Yes)
+*   "It must be a dog!"</p>
 <p>A Decision Tree does the exact same thing with data! It learns the best questions to ask to separate the data into different groups.</p>
+<blockquote>
+<p><strong>🧠 How You Decide What to Eat</strong></p>
+<p>Your brain uses a decision tree every day! When you're hungry, you might think: "Am I in the mood for something sweet or savory?" If savory, "Do I want something quick or a full meal?" If quick, "Maybe a sandwich." You're following the branches of your own mental flowchart to make a decision!</p>
+</blockquote>
 <hr />
 <h3 id="part-2-building-the-tree-from-data-to-flowchart">Part 2: Building the Tree (From Data to Flowchart)<a class="headerlink" href="#part-2-building-the-tree-from-data-to-flowchart" title="Permanent link">&para;</a></h3>
 <p>Let's go back to our trusty pizza-lover dataset. Remember, we encoded it into numbers:</p>
@@ -660,23 +792,19 @@
 <ul>
 <li><strong>Frank's Data:</strong> He likes video games (<code>1</code>), but not superheroes (<code>0</code>).</li>
 </ul>
-<p>We start at the top of the tree:</p>
-<ol>
-<li>
-<p><strong>Likes Video Games?</strong> Frank's answer is <strong>Yes</strong>. We follow the "Yes" branch.</p>
-</li>
-<li>
-<p><strong>Likes Superheroes?</strong> Frank's answer is <strong>No</strong>. We follow the "No" branch.</p>
-</li>
-<li>
-<p><strong>Final Answer:</strong> We land on a prediction: <strong>Likes Pizza!</strong></p>
-</li>
-</ol>
+<p>We start at the top of the tree:
+1.  <strong>Likes Video Games?</strong> Frank's answer is <strong>Yes</strong>. We follow the "Yes" branch.
+2.  <strong>Likes Superheroes?</strong> Frank's answer is <strong>No</strong>. We follow the "No" branch.
+3.  <strong>Final Answer:</strong> We land on a prediction: <strong>Likes Pizza!</strong></p>
 <p>It's that simple! We just followed the path down the tree to get our answer.</p>
 <hr />
 <h3 id="part-4-the-code-part-python-scikit-learn">Part 4: The "Code" Part (Python &amp; Scikit-learn)<a class="headerlink" href="#part-4-the-code-part-python-scikit-learn" title="Permanent link">&para;</a></h3>
 <p>Okay, it's time. How do we actually tell a computer to do this? We use a programming language, and the most popular one for AI is <strong>Python</strong>.</p>
 <p>But we don't have to build everything from scratch! We can use a special "toolbox" for machine learning called <strong>scikit-learn</strong>. It's a free library that has all the common ML models, including Decision Trees, ready to go.</p>
+<blockquote>
+<p><strong>🤯 Fun Fact: Built by Volunteers!</strong></p>
+<p>Scikit-learn, one of the most important and powerful AI toolboxes in the world, is built and maintained almost entirely by volunteers! It's a global community of people who are passionate about making machine learning accessible to everyone.</p>
+</blockquote>
 <p>Here’s what the code would look like. Don't worry about understanding every single word. Just focus on the three main steps and the comments that explain them.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Step 1: Prepare the data (just like we did in Lesson 4!)</span>
 <span class="c1"># X is our features (the clues), y is our label (the answer)</span>

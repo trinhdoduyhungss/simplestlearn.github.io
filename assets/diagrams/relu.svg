@@ -1,0 +1,18 @@
+<svg width="95%" height="160" viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg" style="max-width:800px">
+  <!-- Axes -->
+  <line x1="40" y1="20" x2="40" y2="140" stroke="#1f2937" stroke-width="1"/>
+  <line x1="40" y1="140" x2="760" y2="140" stroke="#1f2937" stroke-width="1"/>
+  <!-- Ticks and labels -->
+  <text x="40" y="156" font-size="12" font-family="sans-serif">-6</text>
+  <text x="208" y="156" font-size="12" font-family="sans-serif">-2</text>
+  <text x="376" y="156" font-size="12" font-family="sans-serif">0</text>
+  <text x="544" y="156" font-size="12" font-family="sans-serif">2</text>
+  <text x="712" y="156" font-size="12" font-family="sans-serif">6</text>
+  <!-- ReLU path: flat at 0 for x < 0, then line y = x for x >= 0 -->
+  <path d="M40 140 L 360 140 L 720 40" stroke="#ea580c" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Reference line for y=x slope -->
+  <line x1="360" y1="140" x2="720" y2="40" stroke="#fca311" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Legend -->
+  <rect x="620" y="10" width="150" height="28" rx="4" fill="#fff7ed" stroke="#fecaca"/>
+  <text x="637" y="27" font-size="12" font-family="sans-serif" fill="#ea580c">ReLU(z) = max(0, z)</text>
+</svg>

@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../lesson2/">
+        <link rel="prev" href="../lesson7/">
       
       
-        <link rel="next" href="../lesson4/">
+        <link rel="next" href="../lesson9/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Lesson 3 - Classification vs Regression - SimplestLearn Wiki</title>
+        <title>Lesson 8 - You Are Who Your Friends Are - SimplestLearn Wiki</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lesson-3-the-two-big-problems-ml-can-solve" class="md-skip">
+        <a href="#lesson-8-you-are-who-your-friends-are-k-nearest-neighbors" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lesson 3 - Classification vs Regression
+              Lesson 8 - You Are Who Your Friends Are
             
           </span>
         </div>
@@ -371,32 +371,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Lesson 3 - Classification vs Regression
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lesson3/" class="md-nav__link">
         
   
   
@@ -407,71 +385,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-classification-the-sorter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 1: Classification (The Sorter 🧺)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-regression-the-guesser" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 2: Regression (The Guesser 🔢)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-quick-visual-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Quick Visual Guide
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-how-to-choose-your-ml-detective-kit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 3: How to Choose - Your ML Detective Kit 🕵️‍♀️
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-4-lets-discuss" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 4: Let's Discuss!
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -573,10 +486,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lesson8/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lesson 8 - You Are Who Your Friends Are
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -587,6 +522,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-big-idea-the-friend-group-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: The Big Idea (The "Friend Group" Analogy)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-finding-the-nearest-neighbors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Finding the "Nearest" Neighbors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-making-a-prediction-majority-vote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Making a Prediction (Majority Vote)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-what-about-regression-averaging-the-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: What About Regression? (Averaging the Friends)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-the-code-knn-in-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5: The Code - KNN in Scikit-learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-lets-discuss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 6: Let's Discuss!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -710,85 +719,94 @@
   
 
 
-<h1 id="lesson-3-the-two-big-problems-ml-can-solve">Lesson 3: The Two Big Problems ML Can Solve! 🎯<a class="headerlink" href="#lesson-3-the-two-big-problems-ml-can-solve" title="Permanent link">&para;</a></h1>
-<p>Hello again, super-learner!</p>
-<p>So far, we've learned what AI is and explored the three "flavors" of machine learning. We paid special attention to <strong>Supervised Learning</strong>, where we teach a computer using an answer key.</p>
-<p>Today, we're going to zoom in on Supervised Learning and discover the two main types of problems it's really good at solving: <strong>Classification</strong> and <strong>Regression</strong>. It sounds fancy, but it's as simple as sorting laundry and guessing numbers!</p>
+<h1 id="lesson-8-you-are-who-your-friends-are-k-nearest-neighbors">Lesson 8: You Are Who Your Friends Are - K-Nearest Neighbors 🧑‍🤝‍🧑<a class="headerlink" href="#lesson-8-you-are-who-your-friends-are-k-nearest-neighbors" title="Permanent link">&para;</a></h1>
+<p>Welcome back, AI explorer!</p>
+<p>You've learned how to build and evaluate a Decision Tree, which is a model that learns by creating a set of <code>if/else</code> rules. But that's not the only way a machine can learn!</p>
+<p>Today, we're going to learn about a completely different and wonderfully simple algorithm called <strong>K-Nearest Neighbors (KNN)</strong>. Its core idea is something you already understand from everyday life: you can tell a lot about someone by the company they keep.</p>
 <hr />
-<h2 id="part-1-classification-the-sorter">Part 1: Classification (The Sorter 🧺)<a class="headerlink" href="#part-1-classification-the-sorter" title="Permanent link">&para;</a></h2>
-<p><strong>Classification</strong> is all about teaching a machine to sort things into groups or categories. The answer is always one of a few specific choices.</p>
-<p><strong>The Analogy: Sorting Laundry</strong>
-Imagine you have a giant pile of laundry. Your job is to sort it into the right baskets: one for whites, one for colors, and one for darks. That's classification! You're assigning each piece of clothing to a specific category.</p>
-<p><strong>The Big Idea:</strong> The model predicts a <strong>category</strong> or a <strong>class</strong>.</p>
-<p><strong>Real-World Examples:</strong></p>
-<ul>
-<li><strong>Spam or Not Spam?</strong> Your email uses classification to read an incoming email and decide: should it go in the "spam" basket or the "inbox" basket?</li>
-<li><strong>Cat vs. Dog:</strong> Our example from last lesson was a classic classification problem. The model looks at a picture and sorts it into the "cat" category or the "dog" category.</li>
-<li><strong>Pizza Lover?:</strong> Our very first model was also a classification model! It predicted whether a student belonged to the "likes pizza" group or the "doesn't like pizza" group.</li>
-</ul>
-<blockquote>
-<p><strong>🤯 Fun Fact: Classifying the Stars!</strong></p>
-<p>Astronomers use classification models to automatically sort images of distant galaxies. Based on features like the galaxy's shape and color, the model can classify it as a "spiral," "elliptical," or "irregular" galaxy, helping scientists understand the universe faster than ever before!</p>
-</blockquote>
+<h3 id="part-1-the-big-idea-the-friend-group-analogy">Part 1: The Big Idea (The "Friend Group" Analogy)<a class="headerlink" href="#part-1-the-big-idea-the-friend-group-analogy" title="Permanent link">&para;</a></h3>
+<p>Imagine it's your first day at a new school. You see a student you don't know, and you want to guess if they like playing soccer. You look around and see them talking and laughing with three other students. You know all three of those students are on the school's soccer team.</p>
+<p>What's your prediction? You'd probably guess the new student likes soccer, too!</p>
+<p>You just used the K-Nearest Neighbors algorithm. The logic is simple: <strong>to predict something about a new data point, first find its "K" closest neighbors, then have them vote.</strong></p>
 <hr />
-<h2 id="part-2-regression-the-guesser">Part 2: Regression (The Guesser 🔢)<a class="headerlink" href="#part-2-regression-the-guesser" title="Permanent link">&para;</a></h2>
-<p><strong>Regression</strong> is all about teaching a machine to predict a specific number or value. The answer can be any number within a range.</p>
-<p><strong>The Analogy: Guessing Jellybeans</strong>
-Imagine a big jar full of jellybeans. If you try to guess <em>exactly</em> how many are inside, you're making a regression guess. Your answer isn't a category like "a lot" or "a little," but a specific number, like "852 jellybeans."</p>
-<p><strong>The Big Idea:</strong> The model predicts a <strong>numerical value</strong>.</p>
-<p><strong>Real-World Examples:</strong></p>
-<ul>
-<li><strong>Weather Forecast:</strong> When your weather app says it will be 75°F tomorrow, that's a regression model at work. It's predicting a specific number on the temperature scale.</li>
-<li><strong>Pizza Delivery Time:</strong> When you order a pizza and the app says it will arrive in 25 minutes, a regression model has predicted that number based on things like traffic, how busy the store is, and how far away you are.</li>
-<li><strong>House Prices:</strong> Real estate websites use regression to predict how much a house is worth. They look at features like the number of bedrooms, the square footage, and the neighborhood to predict a specific price.</li>
-</ul>
-<hr />
-<h2 id="a-quick-visual-guide">A Quick Visual Guide<a class="headerlink" href="#a-quick-visual-guide" title="Permanent link">&para;</a></h2>
-<p>Here’s a little diagram to help you remember the difference:</p>
-<pre class="mermaid"><code>graph TD
-    subgraph Classification [Sorting into Groups]
-        direction LR
-        A[Input Data &lt;br&gt; e.g., a picture of an animal] --&gt; B{Model};
-        B --&gt; C((Group A &lt;br&gt; 'Cat'));
-        B --&gt; D((Group B &lt;br&gt; 'Dog'));
-        B --&gt; E((Group C &lt;br&gt; 'Bird'));
-    end
-
-    subgraph Regression [Predicting a Number]
-        direction LR
-        F[Input Data &lt;br&gt; e.g., size of a house] --&gt; G{Model};
-        G --&gt; H[Predicted Value &lt;br&gt; e.g., $250,000];
-        H --&gt; I[...$240k ... $250k ... $260k...];
+<h3 id="part-2-finding-the-nearest-neighbors">Part 2: Finding the "Nearest" Neighbors<a class="headerlink" href="#part-2-finding-the-nearest-neighbors" title="Permanent link">&para;</a></h3>
+<p>For a computer, "closest" doesn't mean sitting next to someone at lunch. It means the distance on a graph. Let's imagine we have a graph where one axis is "Likes Video Games" and the other is "Likes Superheroes." We can plot all our students on this graph.</p>
+<p>Now, a new student, "Frank," comes along. We can plot him on the graph, too. To find his nearest neighbors, the computer simply measures the distance to all the other points.</p>
+<p>Let's say we choose <strong>K=3</strong>. The algorithm will find the 3 students who are closest to Frank on the graph.</p>
+<p><pre class="mermaid"><code>graph TD
+    subgraph "Finding Frank's 3 Nearest Neighbors (K=3)"
+        A["Frank (Unknown)"] -- closest --&gt; B("Alex - Pizza Lover");
+        A -- 2nd closest --&gt; C("Chloe - Pizza Lover");
+        A -- 3rd closest --&gt; D(Ben - Pizza Lover);
+        E(David - Not a Pizza Lover) -.-&gt; A;
     end</code></pre>
+In this case, Frank's three closest "friends" on the graph are Alex, Chloe, and Ben. David is too "far away" to be in his group of K=3.</p>
 <hr />
-<h2 id="part-3-how-to-choose-your-ml-detective-kit">Part 3: How to Choose - Your ML Detective Kit 🕵️‍♀️<a class="headerlink" href="#part-3-how-to-choose-your-ml-detective-kit" title="Permanent link">&para;</a></h2>
-<p>So, how do you know if you have a classification or a regression problem? It's easy! You just have to ask yourself one simple question.</p>
-<p><strong>The One Big Question: Is the answer I want to predict a word/category, or is it a number?</strong></p>
-<pre class="mermaid"><code>graph TD
-    A{What kind of answer &lt;br&gt; do I want to predict?} --&gt; B{Is it a word or category?};
-    A --&gt; C{Is it a number?};
-    B -- Yes --&gt; D[It's Classification!];
-    C -- Yes --&gt; E[It's Regression!];</code></pre>
-<p>If the answer you're looking for is a label from a small group of choices (like "pass" or "fail," "cat" or "dog," "spam" or "not spam"), you've got a <strong>Classification</strong> problem.</p>
-<p>If the answer you're looking for is a number that can change (like a price, a temperature, or a score), you've got a <strong>Regression</strong> problem. It's that simple!</p>
+<h3 id="part-3-making-a-prediction-majority-vote">Part 3: Making a Prediction (Majority Vote)<a class="headerlink" href="#part-3-making-a-prediction-majority-vote" title="Permanent link">&para;</a></h3>
+<p>Once we have our K-nearest neighbors, making a prediction for classification is easy: <strong>it's a majority vote!</strong></p>
+<ol>
+<li><strong>Look at the neighbors' labels:</strong><ul>
+<li>Alex: Likes Pizza</li>
+<li>Chloe: Likes Pizza</li>
+<li>Ben: Likes Pizza</li>
+</ul>
+</li>
+<li><strong>Count the votes:</strong> That's 3 votes for "Likes Pizza" and 0 votes for "Doesn't Like Pizza."</li>
+<li><strong>Make the prediction:</strong> The majority wins! We predict that Frank will like pizza.</li>
+</ol>
+<p>It's that intuitive!</p>
 <blockquote>
-<p><strong>🧠 Two Kinds of Questions</strong></p>
-<p>Our brains do this all the time! When you look at a traffic light, you're solving a <strong>classification</strong> problem: is it "Red," "Yellow," or "Green"? When you try to guess how many minutes are left in class, you're solving a <strong>regression</strong> problem. We're constantly switching between these two types of thinking without even realizing it!</p>
+<p><strong>🧠 The Power of Social Influence</strong></p>
+<p>KNN is a mathematical version of a powerful psychological principle called "social proof." We often decide what to do or what to like based on the people around us. If you see a long line outside an ice cream shop, you assume the ice cream must be good. The KNN algorithm uses the same logic: if all the "neighboring" data points have a certain label, the new point probably has that label too.</p>
 </blockquote>
 <hr />
-<h2 id="part-4-lets-discuss">Part 4: Let's Discuss!<a class="headerlink" href="#part-4-lets-discuss" title="Permanent link">&para;</a></h2>
-<p>Time to put on your thinking cap! For each of these problems, is it a <strong>Classification</strong> problem or a <strong>Regression</strong> problem? Use your new detective kit to decide!</p>
+<h3 id="part-4-what-about-regression-averaging-the-friends">Part 4: What About Regression? (Averaging the Friends)<a class="headerlink" href="#part-4-what-about-regression-averaging-the-friends" title="Permanent link">&para;</a></h3>
+<p>KNN is amazing because it can do regression, too! But instead of a vote, it takes an <strong>average</strong>.</p>
+<p>Let's say we want to predict a new student's score on a math test.
+1.  We find the <strong>K=3</strong> closest neighbors (the students who have similar study habits, maybe).
+2.  We look at their test scores: Student A got a 90, Student B got a 95, and Student C got an 88.
+3.  Instead of voting, we <strong>average</strong> their scores: <code>(90 + 95 + 88) / 3 = 91</code>.
+4.  Our prediction for the new student's test score is a 91!</p>
+<p>So, for KNN:
+*   <strong>Classification</strong> = Majority Vote
+*   <strong>Regression</strong> = Average</p>
+<hr />
+<h3 id="part-5-the-code-knn-in-scikit-learn">Part 5: The Code - KNN in Scikit-learn<a class="headerlink" href="#part-5-the-code-knn-in-scikit-learn" title="Permanent link">&para;</a></h3>
+<p>Here's the best part. Because <code>scikit-learn</code> is so well-designed, swapping our Decision Tree for a KNN model is incredibly easy. The code is almost identical!</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span> <span class="c1"># We just import a different tool!</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Step 1: Prepare the data (same as before)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Step 2: Split the data (same as before)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Step 3: Create and train the model</span>
+<span class="c1"># Instead of DecisionTreeClassifier, we use KNeighborsClassifier!</span>
+<span class="c1"># We&#39;ll tell it to use 3 neighbors (K=3).</span>
+<span class="n">my_model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">my_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> <span class="c1"># The .fit() method works the same way!</span>
+
+<span class="c1"># Step 4: Grade the model (same as before)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">my_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The KNN model&#39;s accuracy on the final exam is:&quot;</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
+</code></pre></div>
+<p>This shows the power of a good library. Once you know the workflow (split, fit, score), you can easily experiment with different types of models!</p>
+<hr />
+<h3 id="part-6-lets-discuss">Part 6: Let's Discuss!<a class="headerlink" href="#part-6-lets-discuss" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Predicting whether a student will pass or fail a test.</li>
-<li>Predicting a student's exact score on that test (from 0 to 100).</li>
-<li>Predicting if a customer will buy a product (yes or no).</li>
-<li>Predicting how much money a customer will spend.</li>
+<li>In our example, we used K=3. What might happen if we set K=1? What could be a potential problem with that?</li>
+<li>What might happen if our dataset had 100 students and we set K=100?</li>
+<li>Can you think of a time in real life when you used "nearest neighbors" logic to make a decision or a guess about something?</li>
 </ol>
 <hr />
 <p><strong>What's Next?</strong></p>
-<p>You've done it again! You now know the two biggest types of problems that supervised machine learning can solve, and you even know how to tell them apart. This is a huge step in understanding how AI is used to make predictions all around us.</p>
-<p>Next time, we'll start to get our hands dirty with a little bit of code. We'll see how we can represent our data in a way a computer can understand and take the first steps toward building a real machine learning model.</p>
-<p>Stay curious!</p>
+<p>Congratulations! You've added another powerful algorithm to your machine learning toolkit. You're seeing that there are many different ways to teach a machine, each with its own logic.</p>
+<p>This lesson concludes our initial journey into the world of specific ML algorithms. From here, the world is your oyster. You can explore more complex models like Neural Networks, dive deeper into Deep Learning, or start working on your own projects with real-world data.</p>
+<p>You have learned an incredible amount. Never stop being curious, and never stop building!</p>
 
 
 

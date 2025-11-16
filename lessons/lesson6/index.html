@@ -16,6 +16,8 @@
         <link rel="prev" href="../lesson5/">
       
       
+        <link rel="next" href="../lesson7/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
@@ -604,6 +606,144 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 7 - Is Our AI Smart?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 8 - You Are Who Your Friends Are
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 9 - The Friendship Bracelet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 10 - The Art of Measurement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 11 - Introduction to Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 12 - Under the Hood Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -715,18 +855,16 @@
 <h4 id="tool-1-recursion-the-endless-mirror"><strong>Tool 1: Recursion (The Endless Mirror)</strong><a class="headerlink" href="#tool-1-recursion-the-endless-mirror" title="Permanent link">&para;</a></h4>
 <p>Imagine you're standing between two mirrors. You see a reflection of a reflection of a reflection... forever! That's <strong>recursion</strong>. In programming, it's a function that calls <em>itself</em> to solve a smaller piece of the same problem. We'll use this to "grow" our tree, with each branch being a smaller version of the tree.</p>
 <h4 id="tool-2-data-structures-the-trees-blueprint"><strong>Tool 2: Data Structures (The Tree's Blueprint)</strong><a class="headerlink" href="#tool-2-data-structures-the-trees-blueprint" title="Permanent link">&para;</a></h4>
-<p>How do we store a tree in code? We can use a <strong>dictionary</strong> or a <strong>class</strong>! Each "node" (or question) in our tree can hold the question and its "left" and "right" branches, which are more nodes.</p>
+<p>How do we store a tree in code? We can use a <strong>class</strong>! A <code>class</code> is like a blueprint for creating objects. We'll create a <code>Node</code> class that acts as a blueprint for each question (or "node") in our tree. Each <code>Node</code> object will know what its question is, and what its "left" and "right" branches are.</p>
 <h4 id="tool-3-gini-impurity-the-purity-score"><strong>Tool 3: Gini Impurity (The "Purity" Score)</strong><a class="headerlink" href="#tool-3-gini-impurity-the-purity-score" title="Permanent link">&para;</a></h4>
-<p>This is the secret sauce. How does the algorithm know which question is best? It uses a "purity score" to check how well a question splits the data.</p>
-<ul>
-<li>
-<p>A <strong>perfectly pure</strong> group has a score of <strong>0</strong> (e.g., a group of students who all like pizza).</p>
-</li>
-<li>
-<p>A <strong>totally mixed</strong> group has a score of <strong>0.5</strong> (e.g., a group with 50% pizza lovers and 50% pizza haters).</p>
-</li>
-</ul>
+<p>This is the secret sauce. How does the algorithm know which question is best? It uses a "purity score" to check how well a question splits the data.
+*   A <strong>perfectly pure</strong> group has a score of <strong>0</strong> (e.g., a group of students who all like pizza).
+*   A <strong>totally mixed</strong> group has a score of <strong>0.5</strong> (e.g., a group with 50% pizza lovers and 50% pizza haters).</p>
 <p>The algorithm calculates the purity score for every possible question and picks the one that creates the purest groups.</p>
+<blockquote>
+<p><strong>🤯 Fun Fact: It's All About Information!</strong></p>
+<p>The idea of "Information Gain" (which we get by lowering the Gini Impurity) was developed by a scientist named Claude Shannon, who is considered the "father of the information age." He created a whole field of science called "Information Theory" to measure information, and it's the foundation for how computers, phones, and the internet work today!</p>
+</blockquote>
 <h4 id="the-code-step-by-step-a-visual-walkthrough"><strong>The Code, Step-by-Step: A Visual Walkthrough</strong><a class="headerlink" href="#the-code-step-by-step-a-visual-walkthrough" title="Permanent link">&para;</a></h4>
 <p>Let's trace the computer's "thinking" as it starts to build the tree.</p>
 <p><strong>Input:</strong> Our full dataset of 4 students.
@@ -737,14 +875,36 @@
 </code></pre></div>
 The computer's first goal is to find the single best question to ask to split this group.</p>
 <p><strong>Step 1: Calculate the Starting Purity</strong>
-First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1 hater (0). This is a pretty mixed group.</p>
+First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1 hater (0). This is a pretty mixed group.
+*   <strong>Computation:</strong> The Gini Impurity for a set S with C classes is defined as:</p>
+<pre><code>$$
+\mathrm{Gini}(S) = 1 - \sum_{k=1}^{C} p_k^2
+$$
+
+where \(p_k\) is the proportion of samples in S that belong to class \(k\).
+
+In our dataset (two classes: pizza=1, not-pizza=0):
+\[
+p_1 = \frac{3}{4}, \quad p_0 = \frac{1}{4}.
+\]
+
+Substitute and compute:
+\[
+\begin{aligned}
+\mathrm{Gini}(S)
+  &amp;= 1 - \left(\left(\frac{3}{4}\right)^2 + \left(\frac{1}{4}\right)^2 \right) \\
+  &amp;= 1 - \left(\frac{9}{16} + \frac{1}{16}\right) \\
+  &amp;= 1 - \frac{10}{16} = \frac{6}{16} = 0.375.
+\end{aligned}
+\]
+
+Interpretation:
+* 0 means perfectly "pure" (all samples same class).
+* For binary classification, the maximum Gini is \(1 - \tfrac{1}{2} = 0.5\) (when classes are equally mixed).
+* Another useful interpretation: \(\sum_k p_k^2\) is the probability that two randomly selected samples from S have the same label; therefore \(\mathrm{Gini}(S)\) equals the probability two randomly chosen samples have different labels, i.e., how "impure" the set is.
+</code></pre>
 <ul>
-<li>
-<p><strong>Computation:</strong> The Gini Impurity is <code>1 - ((3/4)^2 + (1/4)^2) = 1 - (0.5625 + 0.0625) = 0.375</code>.</p>
-</li>
-<li>
-<p><strong>Output:</strong> The starting "impurity" is 0.375. The goal is to ask a question that lowers this number as much as possible.</p>
-</li>
+<li><strong>Output:</strong> The starting "impurity" is 0.375. The goal is to ask a question that lowers this number as much as possible.</li>
 </ul>
 <pre class="mermaid"><code>graph TD
     subgraph Starting Group
@@ -754,53 +914,59 @@ First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1
     A --&gt; B</code></pre>
 <p><strong>Step 2: Test the First Question ("Likes Video Games?")</strong>
 The computer pretends to split the group based on this question.</p>
-<pre class="mermaid"><code>graph TD
+<p><pre class="mermaid"><code>graph TD
     subgraph "Split on 'Likes Video Games?'"
         A["Parent Gini = 0.375"] --&gt; B{Likes Games?};
         B --&gt;|Yes| C["Left Group: [1,1,1], [1,0,1]&lt;br&gt;2 Likes Pizza, 0 Hates&lt;br&gt;&lt;b&gt;Gini = 0.0 (Perfectly Pure!)&lt;/b&gt;"];
         B --&gt;|No| D["Right Group: [0,1,1], [0,0,0]&lt;br&gt;1 Likes Pizza, 1 Hates&lt;br&gt;&lt;b&gt;Gini = 0.5 (Totally Mixed!)&lt;/b&gt;"];
     end</code></pre>
+*   <strong>Computation:</strong> For a split, we compute the weighted impurity and the information gain. Formally, with <span class="arithmatex">\(N\)</span> total samples, <span class="arithmatex">\(N_l\)</span> left and <span class="arithmatex">\(N_r\)</span> right:</p>
+<pre><code>$$
+\mathrm{Gini}_{\text{split}} = \frac{N_l}{N}\,\mathrm{Gini}(S_l) + \frac{N_r}{N}\,\mathrm{Gini}(S_r),
+$$
+$$
+\mathrm{Information\ Gain} = \mathrm{Gini}(S) - \mathrm{Gini}_{\text{split}}.
+$$
+
+In our split "Likes Video Games?":
+* Left group (Yes): 2 samples, both like pizza \(\Rightarrow\) \(\mathrm{Gini}(S_l) = 0\) (pure).
+* Right group (No): 2 samples, 1 likes, 1 does not \(\Rightarrow\) \(p=1/2,\,\mathrm{Gini}(S_r) = 1 - (1/2)^2 - (1/2)^2 = 0.5\).
+* Weighted impurity:
+  \[
+  \mathrm{Gini}_{\text{split}} = \frac{2}{4}\cdot 0 + \frac{2}{4}\cdot 0.5 = 0.25.
+  \]
+* Information Gain:
+  \[
+  \mathrm{Information\ Gain} = 0.375 - 0.25 = 0.125.
+  \]
+</code></pre>
 <ul>
-<li>
-<p><strong>Computation:</strong> The computer calculates a weighted average of the new impurity: <code>(2/4)*0.0 + (2/4)*0.5 = 0.25</code>. The "Information Gain" (how much the impurity went down) is <code>0.375 - 0.25 = 0.125</code>.</p>
-</li>
-<li>
-<p><strong>Output:</strong> The score for this question is <strong>0.125</strong>.</p>
-</li>
+<li><strong>Output:</strong> The score for this question is <span class="arithmatex">\(0.125\)</span>.</li>
 </ul>
 <p><strong>Step 3: Test the Second Question ("Likes Superheroes?")</strong>
 Now the computer "forgets" the last split and tries again with the next question.</p>
-<pre class="mermaid"><code>graph TD
+<p><pre class="mermaid"><code>graph TD
     subgraph "Split on 'Likes Superheroes?'"
         A["Parent Gini = 0.375"] --&gt; B{Likes Heroes?};
         B --&gt;|Yes| C["Left Group: [1,1,1], [0,1,1]&lt;br&gt;2 Likes Pizza, 0 Hates&lt;br&gt;&lt;b&gt;Gini = 0.0 (Perfectly Pure!)&lt;/b&gt;"];
         B --&gt;|No| D["Right Group: [1,0,1], [0,0,0]&lt;br&gt;1 Likes Pizza, 1 Hates&lt;br&gt;&lt;b&gt;Gini = 0.5 (Totally Mixed!)&lt;/b&gt;"];
     end</code></pre>
+*   <strong>Computation:</strong> This yields the same numeric result by symmetry, so its information gain is also <span class="arithmatex">\(0.125\)</span>.</p>
 <ul>
-<li>
-<p><strong>Computation:</strong> The weighted average is the same: <code>(2/4)*0.0 + (2/4)*0.5 = 0.25</code>. The "Information Gain" is also <code>0.375 - 0.25 = 0.125</code>.</p>
-</li>
-<li>
-<p><strong>Output:</strong> The score for this question is <strong>0.125</strong>.</p>
-</li>
+<li><strong>Output:</strong> The score for this question is <span class="arithmatex">\(0.125\)</span>.</li>
 </ul>
 <p><strong>Step 4: The Decision</strong>
-The computer compares the scores. In this case, they're tied! In a tie, the computer just picks the first one it tried.</p>
-<ul>
-<li><strong>The Winner:</strong> The best first question is "Likes Video Games?".</li>
-</ul>
+The computer compares the scores. In this case, they're tied! In a tie, the computer just picks the first one it tried.
+*   <strong>The Winner:</strong> The best first question is "Likes Video Games?".</p>
 <p><strong>Step 5: The Recursion</strong>
-The computer now has the root of its tree! It then repeats this <em>entire process</em> on the smaller groups.</p>
-<ol>
-<li>
-<p>It runs the <code>get_best_split</code> logic on the "Yes" group.</p>
-</li>
-<li>
-<p>It runs the <code>get_best_split</code> logic on the "No" group.</p>
-</li>
-</ol>
-<p>This is the "endless mirror" of recursion in action! It continues until the groups are pure.</p>
-<p>This whole process of testing splits and finding the one that lowers the impurity score the most is the "magic" inside the <code>.fit()</code> method!</p>
+The computer now has the root of its tree! It then repeats this <em>entire process</em> on the smaller groups.
+1.  It runs the <code>get_best_split</code> logic on the "Yes" group.
+2.  It runs the <code>get_best_split</code> logic on the "No" group.
+This is the "endless mirror" of recursion in action! It continues until the groups are pure.</p>
+<blockquote>
+<p><strong>🧠 How Experts Think</strong></p>
+<p>This process of finding the best question is similar to how an expert, like a doctor, diagnoses an illness. They don't ask random questions. They ask the one question that gives them the most information to narrow down the possibilities. A doctor who asks, "Do you have a fever?" is making a "split" that provides a high "information gain." The AI is learning to think like an expert!</p>
+</blockquote>
 <h4 id="the-full-code-a-real-decision-tree"><strong>The Full Code: A Real Decision Tree</strong><a class="headerlink" href="#the-full-code-a-real-decision-tree" title="Permanent link">&para;</a></h4>
 <p>This code puts all those ideas together. It's complex, but now you can see the "thinking" that happens inside it.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -918,24 +1084,12 @@ The computer now has the root of its tree! It then repeats this <em>entire proce
 <hr />
 <p><strong>What's Next?</strong></p>
 <p>This is the end of our introductory journey, but it's just the beginning of your adventure in AI.</p>
-<p>You have learned:</p>
-<ul>
-<li>
-<p>What AI, ML, and DL are.</p>
-</li>
-<li>
-<p>The different ways machines can learn.</p>
-</li>
-<li>
-<p>How to prepare data for a computer.</p>
-</li>
-<li>
-<p>How to build a model with a powerful toolbox.</p>
-</li>
-<li>
-<p>And now, you've even built a real learning algorithm from scratch!</p>
-</li>
-</ul>
+<p>You have learned:
+*   What AI, ML, and DL are.
+*   The different ways machines can learn.
+*   How to prepare data for a computer.
+*   How to build a model with a powerful toolbox.
+*   And now, you've even built a real learning algorithm from scratch!</p>
 <p>You have a stronger foundation in machine learning than most people on the planet. The next step is to keep building. Keep asking questions. And most importantly, stay curious!</p>
 
 

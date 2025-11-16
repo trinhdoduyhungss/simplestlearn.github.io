@@ -537,6 +537,144 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 7 - Is Our AI Smart?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 8 - You Are Who Your Friends Are
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 9 - The Friendship Bracelet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 10 - The Art of Measurement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 11 - Introduction to Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 12 - Under the Hood Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -565,99 +703,59 @@
 
 <h1 id="lesson-2-the-three-flavors-of-machine-learning">Lesson 2: The Three Flavors of Machine Learning! 🍦<a class="headerlink" href="#lesson-2-the-three-flavors-of-machine-learning" title="Permanent link">&para;</a></h1>
 <p>Hey again, future tech genius!</p>
-<p>Last time, we learned what AI is and built our very first (and very simple) machine learning model to predict pizza lovers. But it turns out, "learning" can mean a few different things for a computer.</p>
-<p>Think of it like ice cream. You might have chocolate, vanilla, and strawberry. They're all ice cream, but they're different flavors. Machine learning is the same! There are three main "flavors," or types, of machine learning. Let's grab a spoon and dig in!</p>
+<p>Last time, we learned what AI is and how it's all related. But it turns out, "learning" can mean a few different things for a computer.</p>
+<p>Think of it like ice cream. You might have chocolate, vanilla, and strawberry. They're all ice cream, but they're different flavors with different recipes. Machine learning is the same! There are three main "flavors," or types, of machine learning. Let's grab a spoon and dig in!</p>
 <hr />
 <h2 id="part-1-supervised-learning-the-copycat">Part 1: Supervised Learning (The Copycat)<a class="headerlink" href="#part-1-supervised-learning-the-copycat" title="Permanent link">&para;</a></h2>
 <p>This is the most common type of machine learning. <strong>Supervised Learning</strong> is like studying for a test with flashcards. On one side of the card, you have a question (the <strong>data</strong>), and on the other side, you have the answer (the <strong>label</strong>).</p>
 <p>You show the computer thousands and thousands of these "flashcards." After a while, it learns the relationship between the questions and the answers so well that it can start predicting the answer for new questions it has never seen before.</p>
 <p><strong>The Big Idea:</strong> You <em>supervise</em> the computer by giving it all the correct answers to learn from.</p>
 <p><strong>Real-World Example: Is it a Cat or a Dog?</strong> 🐱🐶
-Imagine you want to teach a computer to recognize photos of cats and dogs.</p>
-<ol>
-<li>
-<p><strong>You get the data:</strong> You collect thousands of pictures of cats and thousands of pictures of dogs.</p>
-</li>
-<li>
-<p><strong>You label it:</strong> You go through every picture and label it "cat" or "dog." This is the answer key!</p>
-</li>
-<li>
-<p><strong>You train the model:</strong> You feed all these labeled pictures to your machine learning model. It studies the pictures, looking for patterns. It might learn that "cats have pointy ears" and "dogs have floppy ears," but it will find thousands of patterns that are way more complex.</p>
-</li>
-<li>
-<p><strong>You test it:</strong> Now, you show it a brand new picture of a cat it has never seen before. Because it has learned the patterns, it can confidently predict, "That's a cat!"</p>
-</li>
-</ol>
+Imagine you want to teach a computer to recognize photos of cats and dogs.
+1.  <strong>You get the data:</strong> You collect thousands of pictures of cats and thousands of pictures of dogs.
+2.  <strong>You label it:</strong> You go through every picture and label it "cat" or "dog." This is the answer key!
+3.  <strong>You train the model:</strong> You feed all these labeled pictures to your machine learning model. It studies the pictures, looking for patterns. It might learn that "cats have pointy ears" and "dogs have floppy ears," but it will find thousands of patterns that are way more complex.
+4.  <strong>You test it:</strong> Now, you show it a brand new picture of a cat it has never seen before. Because it has learned the patterns, it can confidently predict, "That's a cat!"</p>
 <p>Our pizza-predictor from Lesson 1 was a simple example of supervised learning!</p>
-<pre class="mermaid"><code>graph TD
-    subgraph Supervised Learning [Learning with an Answer Key]
-        direction LR
-        A[Labeled Data &lt;br&gt; e.g., pictures of cats labeled 'cat'] --&gt; B{Model};
-        B --&gt; C[Prediction &lt;br&gt; e.g., 'That's a cat!'];
-    end</code></pre>
+<blockquote>
+<p><strong>🤯 Fun Fact: The Spam Slayer!</strong></p>
+<p>One of the first major successes of supervised learning was in the 1990s for filtering spam emails. By training a model on thousands of emails labeled "spam" or "not spam," they were able to create filters that could automatically clean up our inboxes. It's a true hero of the internet!</p>
+</blockquote>
 <hr />
 <h2 id="part-2-unsupervised-learning-the-detective">Part 2: Unsupervised Learning (The Detective 🕵️)<a class="headerlink" href="#part-2-unsupervised-learning-the-detective" title="Permanent link">&para;</a></h2>
 <p>What if you don't have an answer key? What if you just have a giant pile of data and you want the computer to find any interesting patterns or groups on its own? That's <strong>Unsupervised Learning</strong>!</p>
 <p>This is like being given a giant box of mixed-up LEGOs and being told to "sort them." You might sort them by color, by size, or by shape. You're finding the structure all by yourself, without any instructions.</p>
 <p><strong>The Big Idea:</strong> The computer is <em>unsupervised</em>. It has to find the hidden patterns and groupings in the data on its own.</p>
 <p><strong>Real-World Example: Discovering New Music</strong> 🎶
-Have you ever wondered how Spotify or Apple Music are so good at recommending new songs you might like? They use unsupervised learning!</p>
-<ol>
-<li>
-<p><strong>They get the data:</strong> They look at the listening habits of millions of people. What songs do people listen to together? What artists do the same people like?</p>
-</li>
-<li>
-<p><strong>The model finds clusters:</strong> The unsupervised learning model dives into this data and starts to group songs together. It might create a cluster of high-energy dance songs, a cluster of calm study music, and a cluster of classic rock songs. It doesn't know they are "dance" or "rock," it just knows that people who listen to one song in the cluster tend to listen to the others.</p>
-</li>
-<li>
-<p><strong>You get a recommendation:</strong> When you listen to a song from one of those clusters, the service can recommend other songs from that same cluster, thinking you'll probably like them too!</p>
-</li>
-</ol>
-<pre class="mermaid"><code>graph TD
-    subgraph Unsupervised Learning [Finding Patterns on Your Own]
-        direction LR
-        D[Unlabeled Data &lt;br&gt; e.g., a mix of songs] --&gt; E{Model};
-        E --&gt; F[Clusters/Groups &lt;br&gt; e.g., 'Songs people listen to together'];
-    end</code></pre>
+Have you ever wondered how Spotify or Apple Music are so good at recommending new songs you might like? They use unsupervised learning!
+1.  <strong>They get the data:</strong> They look at the listening habits of millions of people. What songs do people listen to together? What artists do the same people like?
+2.  <strong>The model finds clusters:</strong> The unsupervised learning model dives into this data and starts to group songs together. It might create a cluster of high-energy dance songs, a cluster of calm study music, and a cluster of classic rock songs. It doesn't know they are "dance" or "rock," it just knows that people who listen to one song in the cluster tend to listen to the others.
+3.  <strong>You get a recommendation:</strong> When you listen to a song from one of those clusters, the service can recommend other songs from that same cluster, thinking you'll probably like them too!</p>
+<blockquote>
+<p><strong>🧠 Finding Your Friend Group</strong></p>
+<p>Think about the first day at a new school. You don't have a label for who should be your friend. You just observe people (the data!) and naturally start to see groups, or "clusters," of people who share similar interests, like kids who like skateboarding, or kids who like reading. That's you doing unsupervised learning!</p>
+</blockquote>
 <hr />
 <h2 id="part-3-reinforcement-learning-the-pet-trainer">Part 3: Reinforcement Learning (The Pet Trainer 🐾)<a class="headerlink" href="#part-3-reinforcement-learning-the-pet-trainer" title="Permanent link">&para;</a></h2>
 <p>This is the coolest and most futuristic type of learning. <strong>Reinforcement Learning</strong> is all about learning by trial and error, just like training a pet.</p>
 <p>You put an AI "agent" in an environment (like a video game) and give it a goal. When it does something that gets it closer to the goal, you give it a <strong>reward</strong> (like a treat). When it does something wrong, you might give it a small penalty. Over time, the agent learns to take actions that get it the most rewards.</p>
 <p><strong>The Big Idea:</strong> The agent learns the best actions to take through a system of rewards and punishments, reinforcing good behavior.</p>
 <p><strong>Real-World Example: A Video Game Pro</strong> 🎮
-Imagine an AI learning to play a car racing game.</p>
-<ol>
-<li>
-<p><strong>The Goal:</strong> Finish the race as fast as possible.</p>
-</li>
-<li>
-<p><strong>The Environment:</strong> The racetrack.</p>
-</li>
-<li>
-<p><strong>The Rewards:</strong> The AI gets points for staying on the track, for going fast, and gets a huge bonus for finishing first. It loses points for crashing.</p>
-</li>
-<li>
-<p><strong>The Learning:</strong> At first, the AI is terrible! It crashes constantly. But it learns that crashing is bad (negative reward) and staying on the track is good (positive reward). After playing millions of games, it learns the perfect line to take on every turn and becomes an unbeatable racing champion. This is how AI has learned to master complex games like Chess and Go!</p>
-</li>
-</ol>
-<pre class="mermaid"><code>graph TD
-    subgraph Reinforcement Learning [Learning from Experience]
-        G{Agent &lt;br&gt; e.g., a game character} -- Takes Action --&gt; H[Environment &lt;br&gt; e.g., the game world];
-        H -- Sends back --&gt; I[Reward or Penalty &lt;br&gt; e.g., +10 points!];
-        I -- Teaches --&gt; G;
-    end</code></pre>
+Imagine an AI learning to play a car racing game.
+1.  <strong>The Goal:</strong> Finish the race as fast as possible.
+2.  <strong>The Environment:</strong> The racetrack.
+3.  <strong>The Rewards:</strong> The AI gets points for staying on the track, for going fast, and gets a huge bonus for finishing first. It loses points for crashing.
+4.  <strong>The Learning:</strong> At first, the AI is terrible! It crashes constantly. But it learns that crashing is bad (negative reward) and staying on the track is good (positive reward). After playing millions of games, it learns the perfect line to take on every turn and becomes an unbeatable racing champion. This is how AI has learned to master complex games like Chess and Go!</p>
+<blockquote>
+<p><strong>🧠 Learning to Walk</strong></p>
+<p>When a baby learns to walk, they are using reinforcement learning! They take a step (an action) and either stay up (a reward!) or fall down (a penalty). Each attempt teaches their brain what to do differently next time. Reinforcement learning is the most "natural" way that humans and animals learn new skills.</p>
+</blockquote>
 <hr />
 <h2 id="part-4-lets-discuss">Part 4: Let's Discuss!<a class="headerlink" href="#part-4-lets-discuss" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>Which of the three "flavors" of machine learning do you think is the most interesting? Why?</p>
-</li>
-<li>
-<p>If you were to build a spam filter for your email, which type of learning would you use? What would be the "data" and the "labels"?</p>
-</li>
-<li>
-<p>Can you think of a game where you learned to get better through trial and error (reinforcement learning)?</p>
-</li>
+<li>Which of the three "flavors" of machine learning do you think is the most interesting? Why?</li>
+<li>If you were to build a spam filter for your email, which type of learning would you use? What would be the "data" and the "labels"?</li>
+<li>Can you think of a game where you learned to get better through trial and error (reinforcement learning)?</li>
 </ol>
 <hr />
 <p><strong>What's Next?</strong></p>

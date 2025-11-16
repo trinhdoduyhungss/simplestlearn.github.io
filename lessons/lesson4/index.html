@@ -546,6 +546,144 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 7 - Is Our AI Smart?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 8 - You Are Who Your Friends Are
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 9 - The Friendship Bracelet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 10 - The Art of Measurement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 11 - Introduction to Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lesson12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lesson 12 - Under the Hood Neural Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -580,104 +718,38 @@
 <h3 id="part-1-what-is-data-really-the-recipe-for-ml">Part 1: What is Data, Really? (The Recipe for ML)<a class="headerlink" href="#part-1-what-is-data-really-the-recipe-for-ml" title="Permanent link">&para;</a></h3>
 <p>Think of a machine learning model as a recipe for a cake.</p>
 <ul>
-<li>
-<p>The <strong>ingredients</strong> you put in are your <strong>data</strong>.</p>
-</li>
-<li>
-<p>The final <strong>cake</strong> you bake is your <strong>prediction</strong>.</p>
-</li>
+<li>The <strong>ingredients</strong> you put in are your <strong>data</strong>.</li>
+<li>The final <strong>cake</strong> you bake is your <strong>prediction</strong>.</li>
 </ul>
-<p>If you use bad ingredients (bad data), you're going to get a bad cake (a bad prediction), no matter how good your recipe is!</p>
+<p>If you use bad ingredients (bad data), you're going to get a bad cake (a bad prediction), no matter how good your recipe is! This is a famous saying in machine learning: <strong>"Garbage in, garbage out."</strong></p>
 <p>Our data is just <strong>organized information</strong>. For our pizza-loving student problem, our data was a table of information about each student. The "ingredients" we used were whether they liked video games or superheroes. These ingredients are our <strong>features</strong>. The "cake" we were trying to bake was predicting whether they liked pizza. This is our <strong>label</strong>.</p>
 <hr />
 <h3 id="part-2-from-words-to-numbers-teaching-a-computer-to-read">Part 2: From Words to Numbers (Teaching a Computer to Read)<a class="headerlink" href="#part-2-from-words-to-numbers-teaching-a-computer-to-read" title="Permanent link">&para;</a></h3>
 <p>Here's a super important secret about computers: <strong>they can't read words, they can only understand numbers.</strong></p>
 <p>If we show a computer a table with "Yes" and "No," it has no idea what that means. We need to translate our words into a language the computer can speak. This is called <strong>encoding</strong>.</p>
 <p>Let's take our pizza dataset from Lesson 1.</p>
-<p><strong>Before (Human-Readable):</strong></p>
-<table>
-<thead>
-<tr>
-<th>Student</th>
-<th>Likes Video Games?</th>
-<th>Likes Superheroes?</th>
-<th>Likes Pizza?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Alex</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Ben</td>
-<td>No</td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>Chloe</td>
-<td>Yes</td>
-<td>No</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>David</td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-<p>To translate this, we can make a simple rule:</p>
-<ul>
-<li>
-<p><code>Yes</code> will become <code>1</code></p>
-</li>
-<li>
-<p><code>No</code> will become <code>0</code></p>
-</li>
-</ul>
-<p><strong>After (Computer-Readable):</strong></p>
-<table>
-<thead>
-<tr>
-<th>Student</th>
-<th>Likes Video Games?</th>
-<th>Likes Superheroes?</th>
-<th>Likes Pizza?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Alex</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Ben</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Chloe</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr>
-<td>David</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Before (Human-Readable):</strong>
+| Student | Likes Video Games? | Likes Superheroes? | Likes Pizza? |
+|---|---|---|---|
+| Alex | Yes | Yes | Yes |
+| Ben | No | Yes | Yes |
+| Chloe | Yes | No | Yes |
+| David | No | No | No |</p>
+<p>To translate this, we can make a simple rule:
+*   <code>Yes</code> will become <code>1</code>
+*   <code>No</code> will become <code>0</code></p>
+<p><strong>After (Computer-Readable):</strong>
+| Student | Likes Video Games? | Likes Superheroes? | Likes Pizza? |
+|---|---|---|---|
+| Alex | 1 | 1 | 1 |
+| Ben | 0 | 1 | 1 |
+| Chloe | 1 | 0 | 1 |
+| David | 0 | 0 | 0 |</p>
 <p>Now <em>that's</em> something a computer can work with! We've successfully encoded our features and labels into numbers.</p>
+<blockquote>
+<p><strong>🤯 Fun Fact: The First Encoders!</strong></p>
+<p>The idea of encoding isn't new! The telegraph, invented in the 1830s, used Morse Code to turn letters of the alphabet into a series of dots and dashes (long and short signals). This allowed people to send complex messages over a simple wire. Encoding data for a computer is the modern version of the same idea!</p>
+</blockquote>
 <hr />
 <h3 id="part-3-the-case-of-the-missing-clue">Part 3: The Case of the Missing Clue 🕵️‍♂️<a class="headerlink" href="#part-3-the-case-of-the-missing-clue" title="Permanent link">&para;</a></h3>
 <p>In the real world, data is often messy. What happens if you forget to ask a student a question? You end up with a missing value!</p>
@@ -699,32 +771,19 @@
 </table>
 <p>A computer will see that <code>???</code> and have no idea what to do. It needs a complete table of numbers. We have two simple ways to solve this:</p>
 <ol>
-<li>
-<p><strong>Remove the Row:</strong> The easiest option is to just remove Frank from our data. But if we have a lot of missing values, we could end up throwing away too much good information!</p>
-</li>
-<li>
-<p><strong>Make a Smart Guess (Imputation):</strong> A better way is to make a smart guess. Let's look at our other students. If most of them like superheroes, it's a safe bet that Frank might, too. We can fill in the blank with the most common value.</p>
-</li>
+<li><strong>Remove the Row:</strong> The easiest option is to just remove Frank from our data. But if we have a lot of missing values, we could end up throwing away too much good information!</li>
+<li><strong>Make a Smart Guess (Imputation):</strong> A better way is to make a smart guess. Let's look at our other students. If most of them like superheroes, it's a safe bet that Frank might, too. We can fill in the blank with the most common value.</li>
 </ol>
 <p>Let's say most of our students like superheroes. We can "impute" the missing value:</p>
-<p><strong>After (Imputed):</strong></p>
-<table>
-<thead>
-<tr>
-<th>Student</th>
-<th>Likes Video Games?</th>
-<th>Likes Superheroes? (Imputed)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Frank</td>
-<td>Yes</td>
-<td><strong>Yes</strong></td>
-</tr>
-</tbody>
-</table>
+<p><strong>After (Imputed):</strong>
+| Student | Likes Video Games? | Likes Superheroes? (Imputed) |
+|---|---|---|
+| Frank | Yes | <strong>Yes</strong> |</p>
 <p>Now our table is complete, and the computer can get back to work!</p>
+<blockquote>
+<p><strong>🧠 Filling in the Blanks</strong></p>
+<p>Your brain does imputation all the time! If someone says, "I'm going to the store to buy some bread and ____," your brain instantly fills in the blank with something like "milk" or "eggs." You're using your past experience (your data!) to make a smart guess about the missing information.</p>
+</blockquote>
 <hr />
 <h3 id="part-4-the-mighty-table-features-and-labels-revisited">Part 4: The Mighty Table (Features and Labels Revisited)<a class="headerlink" href="#part-4-the-mighty-table-features-and-labels-revisited" title="Permanent link">&para;</a></h3>
 <p>Let's look at our new, computer-friendly table. In machine learning, you'll often see this table split into two parts:</p>
@@ -785,15 +844,9 @@
 <hr />
 <h3 id="part-5-lets-discuss">Part 5: Let's Discuss!<a class="headerlink" href="#part-5-lets-discuss" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p>Why is it so important to have "good ingredients" (good data) when building a machine learning model?</p>
-</li>
-<li>
-<p>Imagine you have a feature for a t-shirt size ("Small," "Medium," "Large"). Would you use One-Hot Encoding, or could you use <code>1</code>, <code>2</code>, and <code>3</code>? Why?</p>
-</li>
-<li>
-<p>If you wanted to predict a student's grade on a test (a regression problem), what would your <code>y</code> (label) be? What are some <code>X</code> (features) you could use to predict it?</p>
-</li>
+<li>Why is it so important to have "good ingredients" (good data) when building a machine learning model?</li>
+<li>Imagine you have a feature for a t-shirt size ("Small," "Medium," "Large"). Would you use One-Hot Encoding, or could you use <code>1</code>, <code>2</code>, and <code>3</code>? Why?</li>
+<li>If you wanted to predict a student's grade on a test (a regression problem), what would your <code>y</code> (label) be? What are some <code>X</code> (features) you could use to predict it?</li>
 </ol>
 <hr />
 <p><strong>What's Next?</strong></p>

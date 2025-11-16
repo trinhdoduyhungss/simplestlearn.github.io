@@ -1,0 +1,29 @@
+<svg width="95%" height="160" viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg" style="max-width:800px">
+  <!-- Axes -->
+  <line x1="40" y1="20" x2="40" y2="140" stroke="#1f2937" stroke-width="1"/>
+  <line x1="40" y1="80" x2="760" y2="80" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4 2"/> <!-- Center line y=0.5 -->
+  <line x1="400" y1="20" x2="400" y2="140" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4 2"/> <!-- Center line x=0 -->
+
+  <!-- Axis Labels -->
+  <text x="400" y="156" font-size="12" font-family="sans-serif" text-anchor="middle">z=0</text>
+  <text x="25" y="25" font-size="12" font-family="sans-serif" text-anchor="middle">1.0</text>
+  <text x="25" y="85" font-size="12" font-family="sans-serif" text-anchor="middle">0.5</text>
+  <text x="25" y="140" font-size="12" font-family="sans-serif" text-anchor="middle">0.0</text>
+
+  <!-- Accurate Sigmoid Path (thicker, darker color) -->
+  <!-- Sampled z points -6...6 mapped to x=40..760, y=140 - sigmoid(z)*120 -->
+  <polyline points="40,139.702 100,139.196 160,137.84 220,134.31 280,125.696 340,107.727 400,80 460,52.273 520,34.304 580,25.691 640,22.158 700,20.803 760,20.3"
+            stroke="#0b63b0" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Markers at sample points to guarantee visibility -->
+  <circle cx="40" cy="139.702" r="3" fill="#0b63b0" />
+  <circle cx="160" cy="137.84" r="2.5" fill="#0b63b0" />
+  <circle cx="280" cy="125.696" r="2.5" fill="#0b63b0" />
+  <circle cx="400" cy="80" r="3.5" fill="#0b63b0" />
+  <circle cx="520" cy="34.304" r="2.5" fill="#0b63b0" />
+  <circle cx="760" cy="20.3" r="3" fill="#0b63b0" />
+
+  <!-- Legend -->
+  <rect x="580" y="25" width="140" height="28" rx="4" fill="#f0f9ff" stroke="#e0f2fe"/>
+  <text x="598" y="43" font-size="12" font-family="sans-serif" fill="#0b63b0">σ(z) = 1 / (1 + e⁻ᶻ)</text>
+</svg>

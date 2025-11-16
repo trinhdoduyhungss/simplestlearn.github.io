@@ -921,27 +921,32 @@ The computer pretends to split the group based on this question.</p>
         B --&gt;|No| D["Right Group: [0,1,1], [0,0,0]&lt;br&gt;1 Likes Pizza, 1 Hates&lt;br&gt;&lt;b&gt;Gini = 0.5 (Totally Mixed!)&lt;/b&gt;"];
     end</code></pre>
 *   <strong>Computation:</strong> For a split, we compute the weighted impurity and the information gain. Formally, with <span class="arithmatex">\(N\)</span> total samples, <span class="arithmatex">\(N_l\)</span> left and <span class="arithmatex">\(N_r\)</span> right:</p>
-<pre><code>$$
+<div class="arithmatex">\[
 \mathrm{Gini}_{\text{split}} = \frac{N_l}{N}\,\mathrm{Gini}(S_l) + \frac{N_r}{N}\,\mathrm{Gini}(S_r),
-$$
-$$
+\]</div>
+<p>where <span class="arithmatex">\(S_l\)</span> and <span class="arithmatex">\(S_r\)</span> are the left and right subsets after the split.</p>
+<div class="arithmatex">\[
 \mathrm{Information\ Gain} = \mathrm{Gini}(S) - \mathrm{Gini}_{\text{split}}.
-$$
-
-In our split "Likes Video Games?":
-* Left group (Yes): 2 samples, both like pizza \(\Rightarrow\) \(\mathrm{Gini}(S_l) = 0\) (pure).
-* Right group (No): 2 samples, 1 likes, 1 does not \(\Rightarrow\) \(p=1/2,\,\mathrm{Gini}(S_r) = 1 - (1/2)^2 - (1/2)^2 = 0.5\).
-* Weighted impurity:
-  \[
-  \mathrm{Gini}_{\text{split}} = \frac{2}{4}\cdot 0 + \frac{2}{4}\cdot 0.5 = 0.25.
-  \]
-* Information Gain:
-  \[
-  \mathrm{Information\ Gain} = 0.375 - 0.25 = 0.125.
-  \]
-</code></pre>
+\]</div>
+<p>In our split "Likes Video Games?":
+* Left group (Yes): 2 samples, both like pizza <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(\mathrm{Gini}(S_l) = 0\)</span> (pure).
+* Right group (No): 2 samples, 1 likes, 1 does not <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(p=1/2,\,\mathrm{Gini}(S_r) = 1 - (1/2)^2 - (1/2)^2 = 0.5\)</span>.</p>
 <ul>
-<li><strong>Output:</strong> The score for this question is <span class="arithmatex">\(0.125\)</span>.</li>
+<li>
+<p>Weighted impurity:
+[
+\mathrm{Gini}_{\text{split}} = \frac{2}{4}\cdot 0 + \frac{2}{4}\cdot 0.5 = 0.25.
+]</p>
+</li>
+<li>
+<p>Information Gain:
+[
+\mathrm{Information\ Gain} = 0.375 - 0.25 = 0.125.
+]</p>
+</li>
+<li>
+<p><strong>Output:</strong> The score for this question is <span class="arithmatex">\(0.125\)</span>.</p>
+</li>
 </ul>
 <p><strong>Step 3: Test the Second Question ("Likes Superheroes?")</strong>
 Now the computer "forgets" the last split and tries again with the next question.</p>
@@ -1154,9 +1159,9 @@ The computer now has the root of its tree! It then repeats this <em>entire proce
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
-        <script src="../../assets/js/mathjax-config.js"></script>
+        <script src="../../assets/js/mathjax-init.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
       

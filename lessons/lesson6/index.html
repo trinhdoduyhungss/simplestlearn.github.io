@@ -875,25 +875,27 @@
 </code></pre></div>
 The computer's first goal is to find the single best question to ask to split this group.</p>
 <p><strong>Step 1: Calculate the Starting Purity</strong>
-First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1 hater (0). This is a pretty mixed group.
-*   <strong>Computation:</strong> The Gini Impurity for a set S with C classes is defined as:</p>
+First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1 hater (0). This is a pretty mixed group.</p>
+<ul>
+<li><strong>Computation:</strong> The Gini Impurity for a set S with C classes is defined as:</li>
+</ul>
 <div class="arithmatex">\[
 \mathrm{Gini}(S) = 1 - \sum_{k=1}^{C} p_k^2
 \]</div>
 <p>where <span class="arithmatex">\(p_k\)</span> is the proportion of samples in S that belong to class <span class="arithmatex">\(k\)</span>.</p>
-<p>In our dataset (two classes: pizza=1, not-pizza=0):
-$$
+<p>In our dataset (two classes: pizza=1, not-pizza=0):</p>
+<div class="arithmatex">\[
 p_1 = \frac{3}{4}, \quad p_0 = \frac{1}{4}.
-$$</p>
-<p>Substitute and compute:
-$$
+\]</div>
+<p>Substitute and compute:</p>
+<div class="arithmatex">\[
 \begin{aligned}
 \mathrm{Gini}(S)
-    &amp;= 1 - \left(\left(\frac{3}{4}\right)^2 + \left(\frac{1}{4}\right)^2 \right) \
-    &amp;= 1 - \left(\frac{9}{16} + \frac{1}{16}\right) \
+    &amp;= 1 - \left(\left(\frac{3}{4}\right)^2 + \left(\frac{1}{4}\right)^2 \right) \\
+    &amp;= 1 - \left(\frac{9}{16} + \frac{1}{16}\right) \\
     &amp;= 1 - \frac{10}{16} = \frac{6}{16} = 0.375.
 \end{aligned}
-$$</p>
+\]</div>
 <p>Interpretation:</p>
 <ul>
 <li>
@@ -917,13 +919,15 @@ $$</p>
     A --&gt; B</code></pre>
 <p><strong>Step 2: Test the First Question ("Likes Video Games?")</strong>
 The computer pretends to split the group based on this question.</p>
-<p><pre class="mermaid"><code>graph TD
+<pre class="mermaid"><code>graph TD
     subgraph "Split on 'Likes Video Games?'"
         A["Parent Gini = 0.375"] --&gt; B{Likes Games?};
         B --&gt;|Yes| C["Left Group: [1,1,1], [1,0,1]&lt;br&gt;2 Likes Pizza, 0 Hates&lt;br&gt;&lt;b&gt;Gini = 0.0 (Perfectly Pure!)&lt;/b&gt;"];
         B --&gt;|No| D["Right Group: [0,1,1], [0,0,0]&lt;br&gt;1 Likes Pizza, 1 Hates&lt;br&gt;&lt;b&gt;Gini = 0.5 (Totally Mixed!)&lt;/b&gt;"];
     end</code></pre>
-*   <strong>Computation:</strong> For a split, we compute the weighted impurity and the information gain. Formally, with <span class="arithmatex">\(N\)</span> total samples, <span class="arithmatex">\(N_l\)</span> left and <span class="arithmatex">\(N_r\)</span> right:</p>
+<ul>
+<li><strong>Computation:</strong> For a split, we compute the weighted impurity and the information gain. Formally, with <span class="arithmatex">\(N\)</span> total samples, <span class="arithmatex">\(N_l\)</span> left and <span class="arithmatex">\(N_r\)</span> right:</li>
+</ul>
 <div class="arithmatex">\[
 \mathrm{Gini}_{\text{split}} = \frac{N_l}{N}\,\mathrm{Gini}(S_l) + \frac{N_r}{N}\,\mathrm{Gini}(S_r),
 \]</div>
@@ -940,20 +944,20 @@ The computer pretends to split the group based on this question.</p>
 <p>Right group (No): 2 samples, 1 likes, 1 does not <span class="arithmatex">\(\Rightarrow\)</span> <span class="arithmatex">\(p=1/2,\,\mathrm{Gini}(S_r) = 1 - (1/2)^2 - (1/2)^2 = 0.5\)</span>.</p>
 </li>
 <li>
-<p>Weighted impurity:
-$$
+<p>Weighted impurity:</p>
+</li>
+</ul>
+<div class="arithmatex">\[
 \mathrm{Gini}_{\text{split}} = \frac{2}{4}\cdot 0 + \frac{2}{4}\cdot 0.5 = 0.25.
-$$</p>
-</li>
-<li>
-<p>Information Gain:
-$$
+\]</div>
+<ul>
+<li>Information Gain:</li>
+</ul>
+<div class="arithmatex">\[
 \mathrm{Information\ Gain} = 0.375 - 0.25 = 0.125.
-$$</p>
-</li>
-<li>
-<p><strong>Output:</strong> The score for this question is <span class="arithmatex">\(0.125\)</span>.</p>
-</li>
+\]</div>
+<ul>
+<li><strong>Output:</strong> The score for this question is <span class="arithmatex">\(0.125\)</span>.</li>
 </ul>
 <p><strong>Step 3: Test the Second Question ("Likes Superheroes?")</strong>
 Now the computer "forgets" the last split and tries again with the next question.</p>

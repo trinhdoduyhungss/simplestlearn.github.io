@@ -24,12 +24,14 @@ Imagine you have a set of Russian nesting dolls. You know, those wooden dolls th
 
 Here's a little diagram to help you remember:
 
-<div align="center"><img src="../assets/diagrams/ai-diagram.svg"/></div>
+<div align="center"><img src="https://trinhdoduyhungss.github.io/simplestlearn.github.io/assets/diagrams/ai-diagram.svg"/></div>
 
 **Real-World Examples:**
 
 *   **AI:** A character in a video game that cleverly finds its way around obstacles to reach you.
+
 *   **ML:** Your email inbox automatically sorting emails into "spam" and "not spam" based on thousands of examples it has seen before.
+
 *   **DL:** A website that can look at a picture of a dog and tell you what breed it is, even if it's never seen that specific dog before!
 
 ---
@@ -86,13 +88,17 @@ It seems like if a student likes video games OR superheroes, they probably like 
 **The Test (Is Our Model Any Good?):** A new student, Frank, arrives. He loves video games but isn't a big fan of superheroes.
 
 *   **Our Model:** If a student likes video games OR superheroes, they will like pizza.
+
 *   **Frank's Features:** He likes video games.
+
 *   **Prediction:** Frank will like pizza!
 
 But wait! Another new student, Grace, arrives. She doesn't like video games or superheroes.
 
 *   **Our Model:** If a student likes video games OR superheroes, they will like pizza.
+
 *   **Grace's Features:** She doesn't like video games or superheroes.
+
 *   **Prediction:** Grace will *not* like pizza.
 
 Let's say we ask Grace, and she says she *loves* pizza! Our model was wrong! And that's one of the most important lessons in machine learning: **models are not perfect**. They are just our best guess based on the data we have. A big part of machine learning is testing our models and finding ways to make them better.

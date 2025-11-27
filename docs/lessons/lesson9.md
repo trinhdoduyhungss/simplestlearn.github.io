@@ -13,8 +13,11 @@ This will be a challenge, but by the end, you'll have a deep, powerful understan
 Every good project starts with a plan. Here's our four-step recipe for building a KNN model:
 
 1.  **Measure Friendship:** For our new data point, we'll calculate the "distance" to every single data point in our training set.
+
 2.  **Find the Inner Circle:** We'll sort all those distances and find the "K" closest neighbors.
+
 3.  **Ask the Friends:** We'll look at the labels of those K neighbors.
+
 4.  **Make a Prediction:** Based on what the neighbors say, we'll make our final prediction.
 
 ---

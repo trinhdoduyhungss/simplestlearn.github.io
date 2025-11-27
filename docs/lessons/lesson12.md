@@ -5,7 +5,9 @@ In our last lesson, we used a high-level library, `scikit-learn`, to create a ne
 Today, we're going to do just that. We will build our own neural network from scratch using only Python and NumPy. This process will demystify the "magic" and give you a deep, intuitive understanding of how a machine truly learns.
 
 We'll embark on a two-part journey:
+
 1.  **The Perceptron:** We'll start by building the simplest possible neuron, the ancestor of all modern AI.
+
 2.  **The Multi-Layer Perceptron (MLP):** We'll then evolve our simple neuron into a powerful, multi-layered network capable of solving complex problems.
 
 Let's begin.
@@ -22,6 +24,7 @@ The Perceptron operates on a simple principle: it takes a set of inputs, weighs 
 
 1.  **Weighted Sum:** It calculates a weighted sum of its inputs ($x_i$) and adds a bias ($b$). The weights ($w_i$) represent the importance of each input, and the bias acts as a general threshold for firing.
     $$ z = (w_1x_1 + w_2x_2 + ... + w_nx_n) + b $$
+
 2.  **Activation:** It passes this sum through a **step function**. If the sum is greater than zero, it outputs 1 (fires); otherwise, it outputs 0 (does not fire).
 
 ### The Code: Building a Perceptron
@@ -75,11 +78,14 @@ The `fit` method is where the Perceptron learns. For each training example, it p
     linear_output = np.dot(x_i, self.weights) + self.bias
     y_predicted = self.activation_func(linear_output)
     ```
+
 2.  **Calculate the Error:** It finds the difference between the true label (`y_[idx]`) and its prediction.
+
 3.  **Calculate the Update:** It multiplies the error by the `learning_rate`. If the prediction was correct, the error is 0, and no update occurs!
     ```python
     update = self.lr * (y_[idx] - y_predicted)
     ```
+
 4.  **Adjust Weights and Bias:** It nudges the weights and bias in the direction that would reduce the error. If it guessed 0 but the answer was 1, it increases the weights and bias to make the output larger next time, and vice-versa.
     ```python
     self.weights += update * x_i
@@ -114,7 +120,9 @@ The solution? Don't use just one neuron. Use many.
 By adding a **hidden layer** of neurons, the network can learn non-linear patterns. It's like giving the Perceptron multiple lines to draw with, allowing it to create complex decision boundaries. This is a **Multi-Layer Perceptron (MLP)**.
 
 To build one, we need two key upgrades:
+
 1.  A **smooth activation function** (like Sigmoid) that allows us to use calculus to measure error.
+
 2.  **Backpropagation**, an algorithm to figure out how much each weight and bias in the network contributed to the final error.
 
 ### The Code: Building an MLP
@@ -190,11 +198,13 @@ This is the "learning" part. It's a brilliant application of the chain rule from
     output_error = y - output
     output_delta = output_error * sigmoid_derivative(output)
     ```
+
 2.  **Propagate Error to Hidden Layer:** It "propagates" this error backward. It uses the `output_delta` and the weights of the second layer (`self.W2`) to calculate how much the hidden layer contributed to the mistake (`hidden_error`). This is then used to calculate `hidden_delta`.
     ```python
     hidden_error = output_delta.dot(self.W2.T)
     hidden_delta = hidden_error * sigmoid_derivative(self.hidden_output)
     ```
+
 3.  **Update Weights and Biases:** Now knowing how much each layer was "at fault," it nudges the weights and biases in the direction that will reduce the error on the next attempt.
     ```python
     # Update weights and biases for the hidden-to-output connection

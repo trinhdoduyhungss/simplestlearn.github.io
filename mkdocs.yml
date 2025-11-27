@@ -36,13 +36,13 @@ nav:
     - Lesson 3 - Classification vs Regression: lessons/lesson3.md
     - Lesson 4 - Getting Your Data Ready: lessons/lesson4.md
     - Lesson 5 - Your First AI Model: lessons/lesson5.md
-    - Lesson 6 - Under the Hood: lessons/lesson6.md
+    - Lesson 6 - Decision Tree from scratch: lessons/lesson6.md
     - Lesson 7 - Is Our AI Smart?: lessons/lesson7.md
     - Lesson 8 - You Are Who Your Friends Are: lessons/lesson8.md
-    - Lesson 9 - The Friendship Bracelet: lessons/lesson9.md
+    - Lesson 9 - KNN is from scratch: lessons/lesson9.md
     - Lesson 10 - The Art of Measurement: lessons/lesson10.md
     - Lesson 11 - Introduction to Neural Networks: lessons/lesson11.md
-    - Lesson 12 - Under the Hood Neural Networks: lessons/lesson12.md
+    - Lesson 12 - Neural Networks from scratch: lessons/lesson12.md
 
 plugins:
   - search:
@@ -66,9 +66,9 @@ markdown_extensions:
   - tables
 
 extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  - assets/js/mathjax-init.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
-  - assets/js/mermaid-init.js
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css

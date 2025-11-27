@@ -13,6 +13,7 @@ Today, we're going into the kitchen! We're going to learn how to prepare our dat
 Think of a machine learning model as a recipe for a cake.
 
 *   The **ingredients** you put in are your **data**.
+
 *   The final **cake** you bake is your **prediction**.
 
 If you use bad ingredients (bad data), you're going to get a bad cake (a bad prediction), no matter how good your recipe is! This is a famous saying in machine learning: **"Garbage in, garbage out."**
@@ -30,6 +31,7 @@ If we show a computer a table with "Yes" and "No," it has no idea what that mean
 Let's take our pizza dataset from Lesson 1.
 
 **Before (Human-Readable):**
+
 | Student | Likes Video Games? | Likes Superheroes? | Likes Pizza? |
 |---|---|---|---|
 | Alex | Yes | Yes | Yes |
@@ -38,10 +40,13 @@ Let's take our pizza dataset from Lesson 1.
 | David | No | No | No |
 
 To translate this, we can make a simple rule:
+
 *   `Yes` will become `1`
+
 *   `No` will become `0`
 
 **After (Computer-Readable):**
+
 | Student | Likes Video Games? | Likes Superheroes? | Likes Pizza? |
 |---|---|---|---|
 | Alex | 1 | 1 | 1 |
@@ -68,11 +73,13 @@ In the real world, data is often messy. What happens if you forget to ask a stud
 A computer will see that `???` and have no idea what to do. It needs a complete table of numbers. We have two simple ways to solve this:
 
 1.  **Remove the Row:** The easiest option is to just remove Frank from our data. But if we have a lot of missing values, we could end up throwing away too much good information!
+
 2.  **Make a Smart Guess (Imputation):** A better way is to make a smart guess. Let's look at our other students. If most of them like superheroes, it's a safe bet that Frank might, too. We can fill in the blank with the most common value.
 
 Let's say most of our students like superheroes. We can "impute" the missing value:
 
 **After (Imputed):**
+
 | Student | Likes Video Games? | Likes Superheroes? (Imputed) |
 |---|---|---|
 | Frank | Yes | **Yes** |

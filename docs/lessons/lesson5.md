@@ -13,9 +13,13 @@ Don't worry, we're going to start with a model that's super intuitive and easy t
 A Decision Tree is basically a flowchart that the computer learns all by itself. It's like playing a game of "20 Questions." You ask a series of yes/no questions to narrow down the possibilities and arrive at a final answer.
 
 Imagine you're trying to guess an animal. You might ask:
+
 *   "Does it live in the water?" (No)
+
 *   "Does it have four legs?" (Yes)
+
 *   "Does it bark?" (Yes)
+
 *   "It must be a dog!"
 
 A Decision Tree does the exact same thing with data! It learns the best questions to ask to separate the data into different groups.
@@ -62,8 +66,11 @@ Now, let's use our tree to predict if a new student, Frank, will like pizza.
 *   **Frank's Data:** He likes video games (`1`), but not superheroes (`0`).
 
 We start at the top of the tree:
+
 1.  **Likes Video Games?** Frank's answer is **Yes**. We follow the "Yes" branch.
+
 2.  **Likes Superheroes?** Frank's answer is **No**. We follow the "No" branch.
+
 3.  **Final Answer:** We land on a prediction: **Likes Pizza!**
 
 It's that simple! We just followed the path down the tree to get our answer.

@@ -23,6 +23,7 @@ This is the problem we have in machine learning. If we test our model on the sam
 To solve this, we do something very simple and very powerful: we split our data into two piles *before* we start.
 
 1.  **The Training Set (The Study Guide):** This is the bigger pile, usually about 80% of our data. We give this to our model to learn from. This is its homework, its notes, its study guide.
+
 2.  **The Test Set (The Final Exam):** This is the smaller pile, the other 20%. We **hide** this data from the model while it's training. The model never, ever gets to see the answers for the test set.
 
 Once the model is fully trained on the training set, we bring out the test set and use it to give the model its final grade. This gives us an honest look at how well our model can perform on new data it has never seen before.
@@ -125,11 +126,17 @@ In cases like this, scientists use other metrics like **Precision** (of all the 
 This is the end of our introductory series, and you have been an amazing student!
 
 You have learned:
+
 *   What AI, ML, and DL are.
+
 *   The different ways machines can learn.
+
 *   How to prepare data for a computer.
+
 *   How to build a model with a powerful toolbox.
+
 *   How to peek under the hood to see how it all works.
+
 *   And now, how to properly grade your work like a real scientist.
 
 You have a stronger foundation in machine learning than most people on the planet. The journey from here is endless and exciting. You can explore new models, work with bigger and more interesting datasets, and start building projects that can help people.

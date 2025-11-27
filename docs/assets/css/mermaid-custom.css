@@ -50,15 +50,3 @@
 .mermaid {
   padding: 1rem 0;
 }
-
-/* Keep SVG diagrams responsive and not overflow the page */
-.mermaid svg,
-img[src$=".svg"] {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Optional: center diagrams for readability */
-.mermaid {
-  margin: 0.5em 0;
-}

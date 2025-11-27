@@ -45,9 +45,13 @@ Once we have our K-nearest neighbors, making a prediction for classification is 
 
 1.  **Look at the neighbors' labels:**
     *   Alex: Likes Pizza
+
     *   Chloe: Likes Pizza
+
     *   Ben: Likes Pizza
+
 2.  **Count the votes:** That's 3 votes for "Likes Pizza" and 0 votes for "Doesn't Like Pizza."
+
 3.  **Make the prediction:** The majority wins! We predict that Frank will like pizza.
 
 It's that intuitive!
@@ -63,13 +67,19 @@ It's that intuitive!
 KNN is amazing because it can do regression, too! But instead of a vote, it takes an **average**.
 
 Let's say we want to predict a new student's score on a math test.
+
 1.  We find the **K=3** closest neighbors (the students who have similar study habits, maybe).
+
 2.  We look at their test scores: Student A got a 90, Student B got a 95, and Student C got an 88.
+
 3.  Instead of voting, we **average** their scores: `(90 + 95 + 88) / 3 = 91`.
+
 4.  Our prediction for the new student's test score is a 91!
 
 So, for KNN:
+
 *   **Classification** = Majority Vote
+
 *   **Regression** = Average
 
 ---

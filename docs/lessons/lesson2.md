@@ -17,10 +17,15 @@ You show the computer thousands and thousands of these "flashcards." After a whi
 **The Big Idea:** You *supervise* the computer by giving it all the correct answers to learn from.
 
 **Real-World Example: Is it a Cat or a Dog?** 🐱🐶
+
 Imagine you want to teach a computer to recognize photos of cats and dogs.
+
 1.  **You get the data:** You collect thousands of pictures of cats and thousands of pictures of dogs.
+
 2.  **You label it:** You go through every picture and label it "cat" or "dog." This is the answer key!
+
 3.  **You train the model:** You feed all these labeled pictures to your machine learning model. It studies the pictures, looking for patterns. It might learn that "cats have pointy ears" and "dogs have floppy ears," but it will find thousands of patterns that are way more complex.
+
 4.  **You test it:** Now, you show it a brand new picture of a cat it has never seen before. Because it has learned the patterns, it can confidently predict, "That's a cat!"
 
 Our pizza-predictor from Lesson 1 was a simple example of supervised learning!
@@ -40,9 +45,12 @@ This is like being given a giant box of mixed-up LEGOs and being told to "sort t
 **The Big Idea:** The computer is *unsupervised*. It has to find the hidden patterns and groupings in the data on its own.
 
 **Real-World Example: Discovering New Music** 🎶
+
 Have you ever wondered how Spotify or Apple Music are so good at recommending new songs you might like? They use unsupervised learning!
 1.  **They get the data:** They look at the listening habits of millions of people. What songs do people listen to together? What artists do the same people like?
+
 2.  **The model finds clusters:** The unsupervised learning model dives into this data and starts to group songs together. It might create a cluster of high-energy dance songs, a cluster of calm study music, and a cluster of classic rock songs. It doesn't know they are "dance" or "rock," it just knows that people who listen to one song in the cluster tend to listen to the others.
+
 3.  **You get a recommendation:** When you listen to a song from one of those clusters, the service can recommend other songs from that same cluster, thinking you'll probably like them too!
 
 > **🧠 Finding Your Friend Group**
@@ -60,10 +68,15 @@ You put an AI "agent" in an environment (like a video game) and give it a goal. 
 **The Big Idea:** The agent learns the best actions to take through a system of rewards and punishments, reinforcing good behavior.
 
 **Real-World Example: A Video Game Pro** 🎮
+
 Imagine an AI learning to play a car racing game.
+
 1.  **The Goal:** Finish the race as fast as possible.
+
 2.  **The Environment:** The racetrack.
+
 3.  **The Rewards:** The AI gets points for staying on the track, for going fast, and gets a huge bonus for finishing first. It loses points for crashing.
+
 4.  **The Learning:** At first, the AI is terrible! It crashes constantly. But it learns that crashing is bad (negative reward) and staying on the track is good (positive reward). After playing millions of games, it learns the perfect line to take on every turn and becomes an unbeatable racing champion. This is how AI has learned to master complex games like Chess and Go!
 
 > **🧠 Learning to Walk**

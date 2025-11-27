@@ -17,13 +17,13 @@ Our curriculum is organized into foundational lessons that build on each other. 
 | **3** | [Classification vs. Regression](./lessons/lesson3.md) | Dive into the two main problems that Supervised Learning solves: sorting things or predicting numbers. |
 | **4** | [Getting Your Data Ready](./lessons/lesson4.md) | Learn the crucial step of data preparation, including encoding and handling missing values. |
 | **5** | [Your First AI Model](./lessons/lesson5.md) | Time to code! Build your first Decision Tree model using the powerful `scikit-learn` library. |
-| **6** | [Under the Hood: Decision Tree](./lessons/lesson6.md) | For the curious, we'll build a Decision Tree from scratch to see how the magic really works. |
+| **6** | [Decision Tree from scratch](./lessons/lesson6.md) | For the curious, we'll build a Decision Tree from scratch to see how the magic really works. |
 | **7** | [Is Our AI Smart?](./lessons/lesson7.md) | Learn how to evaluate your model's performance like a real scientist using a "test set." |
 | **8** | [You Are Who Your Friends Are](./lessons/lesson8.md) | Explore a new, intuitive algorithm called K-Nearest Neighbors (KNN). |
-| **9** | [Under the Hood: KNN](./lessons/lesson9.md) | A true challenge! We'll build the K-Nearest Neighbors algorithm from scratch. |
+| **9** | [KNN from scratch](./lessons/lesson9.md) | A true challenge! We'll build the K-Nearest Neighbors algorithm from scratch. |
 | **10**| [The Art of Measurement](./lessons/lesson10.md) | Dive deeper into KNN and explore different ways to measure "distance" between data points. |
 | **11**| [Introduction to Neural Networks](./lessons/lesson11.md) | A gentle introduction to the "brains" of AI, from Perceptrons to Multi-Layer Perceptrons. |
-| **12**| [Under the Hood: Neural Networks](./lessons/lesson12.md) | Pull back the curtain and build a working neural network from scratch using only NumPy. |
+| **12**| [Neural Networks from scratch](./lessons/lesson12.md) | Pull back the curtain and build a working neural network from scratch using only NumPy. |
 
 ---
 

@@ -125,7 +125,9 @@ How do we store a tree in code? We can use a **class**! A `class` is like a blue
 
 #### **Tool 3: Gini Impurity (The "Purity" Score)**
 This is the secret sauce. How does the algorithm know which question is best? It uses a "purity score" to check how well a question splits the data.
+
 *   A **perfectly pure** group has a score of **0** (e.g., a group of students who all like pizza).
+
 *   A **totally mixed** group has a score of **0.5** (e.g., a group with 50% pizza lovers and 50% pizza haters).
 
 The algorithm calculates the purity score for every possible question and picks the one that creates the purest groups.
@@ -148,33 +150,39 @@ The computer's first goal is to find the single best question to ask to split th
 
 **Step 1: Calculate the Starting Purity**
 First, the computer looks at the whole group. There are 3 pizza lovers (1) and 1 hater (0). This is a pretty mixed group.
+
 *   **Computation:** The Gini Impurity for a set S with C classes is defined as:
 
-    $$
-    \mathrm{Gini}(S) = 1 - \sum_{k=1}^{C} p_k^2
-    $$
+$$
+\mathrm{Gini}(S) = 1 - \sum_{k=1}^{C} p_k^2
+$$
 
-    where \(p_k\) is the proportion of samples in S that belong to class \(k\).
+where \(p_k\) is the proportion of samples in S that belong to class \(k\).
 
-    In our dataset (two classes: pizza=1, not-pizza=0):
-    \[
-    p_1 = \frac{3}{4}, \quad p_0 = \frac{1}{4}.
-    \]
+In our dataset (two classes: pizza=1, not-pizza=0):
 
-    Substitute and compute:
-    \[
-    \begin{aligned}
-    \mathrm{Gini}(S)
-      &= 1 - \left(\left(\frac{3}{4}\right)^2 + \left(\frac{1}{4}\right)^2 \right) \\
-      &= 1 - \left(\frac{9}{16} + \frac{1}{16}\right) \\
-      &= 1 - \frac{10}{16} = \frac{6}{16} = 0.375.
-    \end{aligned}
-    \]
+$$
+p_1 = \frac{3}{4}, \quad p_0 = \frac{1}{4}.
+$$
 
-    Interpretation:
-    * 0 means perfectly "pure" (all samples same class).
-    * For binary classification, the maximum Gini is \(1 - \tfrac{1}{2} = 0.5\) (when classes are equally mixed).
-    * Another useful interpretation: \(\sum_k p_k^2\) is the probability that two randomly selected samples from S have the same label; therefore \(\mathrm{Gini}(S)\) equals the probability two randomly chosen samples have different labels, i.e., how "impure" the set is.
+Substitute and compute:
+
+$$
+\begin{aligned}
+\mathrm{Gini}(S)
+    &= 1 - \left(\left(\frac{3}{4}\right)^2 + \left(\frac{1}{4}\right)^2 \right) \\
+    &= 1 - \left(\frac{9}{16} + \frac{1}{16}\right) \\
+    &= 1 - \frac{10}{16} = \frac{6}{16} = 0.375.
+\end{aligned}
+$$
+
+Interpretation:
+
+* 0 means perfectly "pure" (all samples same class).
+
+* For binary classification, the maximum Gini is $1 - \tfrac{1}{2} = 0.5$ (when classes are equally mixed).
+
+* Another useful interpretation: \(\sum_k p_k^2\) is the probability that two randomly selected samples from S have the same label; therefore \(\mathrm{Gini}(S)\) equals the probability two randomly chosen samples have different labels, i.e., how "impure" the set is.
 
 *   **Output:** The starting "impurity" is 0.375. The goal is to ask a question that lowers this number as much as possible.
 
@@ -198,26 +206,36 @@ graph TD
         B -->|No| D["Right Group: [0,1,1], [0,0,0]<br>1 Likes Pizza, 1 Hates<br><b>Gini = 0.5 (Totally Mixed!)</b>"];
     end
 ```
+
 *   **Computation:** For a split, we compute the weighted impurity and the information gain. Formally, with \(N\) total samples, \(N_l\) left and \(N_r\) right:
 
-    $$
-    \mathrm{Gini}_{\text{split}} = \frac{N_l}{N}\,\mathrm{Gini}(S_l) + \frac{N_r}{N}\,\mathrm{Gini}(S_r),
-    $$
-    $$
-    \mathrm{Information\ Gain} = \mathrm{Gini}(S) - \mathrm{Gini}_{\text{split}}.
-    $$
+$$
+\mathrm{Gini}_{\text{split}} = \frac{N_l}{N}\,\mathrm{Gini}(S_l) + \frac{N_r}{N}\,\mathrm{Gini}(S_r),
+$$
 
-    In our split "Likes Video Games?":
-    * Left group (Yes): 2 samples, both like pizza \(\Rightarrow\) \(\mathrm{Gini}(S_l) = 0\) (pure).
-    * Right group (No): 2 samples, 1 likes, 1 does not \(\Rightarrow\) \(p=1/2,\,\mathrm{Gini}(S_r) = 1 - (1/2)^2 - (1/2)^2 = 0.5\).
-    * Weighted impurity:
-      \[
-      \mathrm{Gini}_{\text{split}} = \frac{2}{4}\cdot 0 + \frac{2}{4}\cdot 0.5 = 0.25.
-      \]
-    * Information Gain:
-      \[
-      \mathrm{Information\ Gain} = 0.375 - 0.25 = 0.125.
-      \]
+where \(S_l\) and \(S_r\) are the left and right subsets after the split.
+
+$$
+\mathrm{Information\ Gain} = \mathrm{Gini}(S) - \mathrm{Gini}_{\text{split}}.
+$$
+
+In our split "Likes Video Games?":
+
+* Left group (Yes): 2 samples, both like pizza \(\Rightarrow\) \(\mathrm{Gini}(S_l) = 0\) (pure).
+
+* Right group (No): 2 samples, 1 likes, 1 does not \(\Rightarrow\) \(p=1/2,\,\mathrm{Gini}(S_r) = 1 - (1/2)^2 - (1/2)^2 = 0.5\).
+
+* Weighted impurity:
+
+$$
+\mathrm{Gini}_{\text{split}} = \frac{2}{4}\cdot 0 + \frac{2}{4}\cdot 0.5 = 0.25.
+$$
+
+* Information Gain:
+
+$$
+\mathrm{Information\ Gain} = 0.375 - 0.25 = 0.125.
+$$
 
 *   **Output:** The score for this question is \(0.125\).
 
@@ -232,18 +250,23 @@ graph TD
         B -->|No| D["Right Group: [1,0,1], [0,0,0]<br>1 Likes Pizza, 1 Hates<br><b>Gini = 0.5 (Totally Mixed!)</b>"];
     end
 ```
+
 *   **Computation:** This yields the same numeric result by symmetry, so its information gain is also \(0.125\).
 
 *   **Output:** The score for this question is \(0.125\).
 
 **Step 4: The Decision**
 The computer compares the scores. In this case, they're tied! In a tie, the computer just picks the first one it tried.
+
 *   **The Winner:** The best first question is "Likes Video Games?".
 
 **Step 5: The Recursion**
 The computer now has the root of its tree! It then repeats this *entire process* on the smaller groups.
+
 1.  It runs the `get_best_split` logic on the "Yes" group.
+
 2.  It runs the `get_best_split` logic on the "No" group.
+
 This is the "endless mirror" of recursion in action! It continues until the groups are pure.
 
 > **🧠 How Experts Think**

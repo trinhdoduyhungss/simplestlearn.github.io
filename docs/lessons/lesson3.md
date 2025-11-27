@@ -20,7 +20,9 @@ Imagine you have a giant pile of laundry. Your job is to sort it into the right 
 **Real-World Examples:**
 
 *   **Spam or Not Spam?** Your email uses classification to read an incoming email and decide: should it go in the "spam" basket or the "inbox" basket?
+
 *   **Cat vs. Dog:** Our example from last lesson was a classic classification problem. The model looks at a picture and sorts it into the "cat" category or the "dog" category.
+
 *   **Pizza Lover?:** Our very first model was also a classification model! It predicted whether a student belonged to the "likes pizza" group or the "doesn't like pizza" group.
 
 > **🤯 Fun Fact: Classifying the Stars!**
@@ -41,7 +43,9 @@ Imagine a big jar full of jellybeans. If you try to guess *exactly* how many are
 **Real-World Examples:**
 
 *   **Weather Forecast:** When your weather app says it will be 75°F tomorrow, that's a regression model at work. It's predicting a specific number on the temperature scale.
+
 *   **Pizza Delivery Time:** When you order a pizza and the app says it will arrive in 25 minutes, a regression model has predicted that number based on things like traffic, how busy the store is, and how far away you are.
+
 *   **House Prices:** Real estate websites use regression to predict how much a house is worth. They look at features like the number of bedrooms, the square footage, and the neighborhood to predict a specific price.
 
 ---

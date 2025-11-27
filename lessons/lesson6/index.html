@@ -857,9 +857,15 @@
 <h4 id="tool-2-data-structures-the-trees-blueprint"><strong>Tool 2: Data Structures (The Tree's Blueprint)</strong><a class="headerlink" href="#tool-2-data-structures-the-trees-blueprint" title="Permanent link">&para;</a></h4>
 <p>How do we store a tree in code? We can use a <strong>class</strong>! A <code>class</code> is like a blueprint for creating objects. We'll create a <code>Node</code> class that acts as a blueprint for each question (or "node") in our tree. Each <code>Node</code> object will know what its question is, and what its "left" and "right" branches are.</p>
 <h4 id="tool-3-gini-impurity-the-purity-score"><strong>Tool 3: Gini Impurity (The "Purity" Score)</strong><a class="headerlink" href="#tool-3-gini-impurity-the-purity-score" title="Permanent link">&para;</a></h4>
-<p>This is the secret sauce. How does the algorithm know which question is best? It uses a "purity score" to check how well a question splits the data.
-*   A <strong>perfectly pure</strong> group has a score of <strong>0</strong> (e.g., a group of students who all like pizza).
-*   A <strong>totally mixed</strong> group has a score of <strong>0.5</strong> (e.g., a group with 50% pizza lovers and 50% pizza haters).</p>
+<p>This is the secret sauce. How does the algorithm know which question is best? It uses a "purity score" to check how well a question splits the data.</p>
+<ul>
+<li>
+<p>A <strong>perfectly pure</strong> group has a score of <strong>0</strong> (e.g., a group of students who all like pizza).</p>
+</li>
+<li>
+<p>A <strong>totally mixed</strong> group has a score of <strong>0.5</strong> (e.g., a group with 50% pizza lovers and 50% pizza haters).</p>
+</li>
+</ul>
 <p>The algorithm calculates the purity score for every possible question and picks the one that creates the purest groups.</p>
 <blockquote>
 <p><strong>🤯 Fun Fact: It's All About Information!</strong></p>
@@ -961,19 +967,25 @@ The computer pretends to split the group based on this question.</p>
 </ul>
 <p><strong>Step 3: Test the Second Question ("Likes Superheroes?")</strong>
 Now the computer "forgets" the last split and tries again with the next question.</p>
-<p><pre class="mermaid"><code>graph TD
+<pre class="mermaid"><code>graph TD
     subgraph "Split on 'Likes Superheroes?'"
         A["Parent Gini = 0.375"] --&gt; B{Likes Heroes?};
         B --&gt;|Yes| C["Left Group: [1,1,1], [0,1,1]&lt;br&gt;2 Likes Pizza, 0 Hates&lt;br&gt;&lt;b&gt;Gini = 0.0 (Perfectly Pure!)&lt;/b&gt;"];
         B --&gt;|No| D["Right Group: [1,0,1], [0,0,0]&lt;br&gt;1 Likes Pizza, 1 Hates&lt;br&gt;&lt;b&gt;Gini = 0.5 (Totally Mixed!)&lt;/b&gt;"];
     end</code></pre>
-*   <strong>Computation:</strong> This yields the same numeric result by symmetry, so its information gain is also <span class="arithmatex">\(0.125\)</span>.</p>
 <ul>
-<li><strong>Output:</strong> The score for this question is <span class="arithmatex">\(0.125\)</span>.</li>
+<li>
+<p><strong>Computation:</strong> This yields the same numeric result by symmetry, so its information gain is also <span class="arithmatex">\(0.125\)</span>.</p>
+</li>
+<li>
+<p><strong>Output:</strong> The score for this question is <span class="arithmatex">\(0.125\)</span>.</p>
+</li>
 </ul>
 <p><strong>Step 4: The Decision</strong>
-The computer compares the scores. In this case, they're tied! In a tie, the computer just picks the first one it tried.
-*   <strong>The Winner:</strong> The best first question is "Likes Video Games?".</p>
+The computer compares the scores. In this case, they're tied! In a tie, the computer just picks the first one it tried.</p>
+<ul>
+<li><strong>The Winner:</strong> The best first question is "Likes Video Games?".</li>
+</ul>
 <p><strong>Step 5: The Recursion</strong>
 The computer now has the root of its tree! It then repeats this <em>entire process</em> on the smaller groups.</p>
 <ol>

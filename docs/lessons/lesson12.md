@@ -23,7 +23,7 @@ Invented in 1958 by Frank Rosenblatt, the **Perceptron** is the simplest form of
 The Perceptron operates on a simple principle: it takes a set of inputs, weighs their importance, and if the combined evidence is strong enough, it "fires."
 
 1.  **Weighted Sum:** It calculates a weighted sum of its inputs ($x_i$) and adds a bias ($b$). The weights ($w_i$) represent the importance of each input, and the bias acts as a general threshold for firing.
-    $$ z = (w_1x_1 + w_2x_2 + ... + w_nx_n) + b $$
+    $$ z = \left(w_1 x_1 + w_2 x_2 + \dots + w_n x_n\right) + b $$
 
 2.  **Activation:** It passes this sum through a **step function**. If the sum is greater than zero, it outputs 1 (fires); otherwise, it outputs 0 (does not fire).
 
